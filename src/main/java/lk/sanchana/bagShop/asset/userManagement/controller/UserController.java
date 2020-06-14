@@ -1,5 +1,7 @@
 package lk.sanchana.bagShop.asset.userManagement.controller;
 
+
+
 import lk.sanchana.bagShop.asset.employee.entity.Employee;
 import lk.sanchana.bagShop.asset.employee.entity.Enum.Designation;
 import lk.sanchana.bagShop.asset.employee.entity.Enum.EmployeeStatus;
@@ -13,10 +15,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 
 import javax.validation.Valid;
-import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -81,7 +81,7 @@ public class UserController {
     @PostMapping( value = "/workingPlace" )
     public String addUserEmployeeDetails(@ModelAttribute( "employee" ) Employee employee, Model model) {
 
-        List< Employee > employees = employeeService.search(employee)
+        List<Employee> employees = employeeService.search(employee)
                 .stream()
                 .filter(userService::findByEmployee)
                 .collect(Collectors.toList());

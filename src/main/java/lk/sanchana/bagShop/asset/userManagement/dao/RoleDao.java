@@ -1,5 +1,6 @@
 package lk.sanchana.bagShop.asset.userManagement.dao;
 
+
 import lk.sanchana.bagShop.asset.userManagement.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

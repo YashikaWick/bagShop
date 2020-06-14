@@ -1,6 +1,8 @@
 package lk.sanchana.bagShop.asset.userManagement.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+
 import lk.sanchana.bagShop.asset.employee.entity.Employee;
 import lk.sanchana.bagShop.util.audit.AuditEntity;
 import lombok.AllArgsConstructor;
@@ -14,7 +16,6 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Getter
