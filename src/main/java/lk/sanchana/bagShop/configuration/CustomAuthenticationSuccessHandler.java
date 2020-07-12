@@ -1,6 +1,5 @@
 package lk.sanchana.bagShop.configuration;
 
-
 import lk.sanchana.bagShop.asset.userManagement.entity.Enum.UserSessionLogStatus;
 import lk.sanchana.bagShop.asset.userManagement.entity.User;
 import lk.sanchana.bagShop.asset.userManagement.entity.UserSessionLog;

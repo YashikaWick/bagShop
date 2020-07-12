@@ -1,5 +1,6 @@
 package lk.sanchana.bagShop.asset.userManagement.entity;
 
+
 import lk.sanchana.bagShop.util.audit.AuditEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

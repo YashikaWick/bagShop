@@ -1,5 +1,7 @@
 package lk.sanchana.bagShop.asset.userManagement.entity;
 
+
+
 import lk.sanchana.bagShop.asset.userManagement.entity.Enum.UserSessionLogStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
