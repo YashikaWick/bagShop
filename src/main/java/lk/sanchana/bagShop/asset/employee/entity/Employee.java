@@ -1,8 +1,6 @@
 package lk.sanchana.bagShop.asset.employee.entity;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
-import lk.sanchana.bagShop.asset.branch.entity.Branch;
-import lk.sanchana.bagShop.asset.commonAsset.model.Enum.BloodGroup;
 import lk.sanchana.bagShop.asset.commonAsset.model.Enum.CivilStatus;
 import lk.sanchana.bagShop.asset.commonAsset.model.Enum.Gender;
 import lk.sanchana.bagShop.asset.commonAsset.model.Enum.Title;
@@ -33,7 +31,7 @@ import java.util.List;
 public class Employee extends AuditEntity {
 
     @Column(unique = true)
-    private String payRoleNumber;
+    private String epf;
 
     @Size(min = 5, message = "Your name cannot be accepted")
     private String name;
@@ -45,18 +43,12 @@ public class Employee extends AuditEntity {
     @Column(unique = true)
     private String nic;
 
-    @Column(unique = true)
-    private String departmentIdNumber;
-
     @Size(max = 10, message = "Mobile number length should be contained 10 and 9")
     private String mobileOne;
 
     private String mobileTwo;
 
     private String land;
-
-    @Column(unique = true)
-    private String email;
 
     @Column(unique = true)
     private String officeEmail;
@@ -69,9 +61,6 @@ public class Employee extends AuditEntity {
 
     @Enumerated(EnumType.STRING)
     private Gender gender;
-
-    @Enumerated(EnumType.STRING)
-    private BloodGroup bloodGroup;
 
     @Enumerated(EnumType.STRING)
     private Designation designation;
@@ -87,9 +76,6 @@ public class Employee extends AuditEntity {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateOfAssignment;
-
-    @ManyToOne
-    private Branch branch;
 
     @ManyToMany(mappedBy = "employees")
     private List<EmailMessage> emailMessages;

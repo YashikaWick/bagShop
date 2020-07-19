@@ -35,29 +35,21 @@
         <div class="row">
             <!--Left Side-->
             <div class="form-group col-md-6 col-sm-6 text-left flex-column">
+<!--                <div class="form-row text-right">-->
+<!--                    <div class="col-md-4">-->
+<!--                        <label class="control-label" for="id">ID :</label>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-8">-->
+<!--                        <p id="id" th:text="${employeeDetail.id}" class="display_detail"></p>-->
+<!--                    </div>-->
+<!--                </div>-->
                 <div class="form-row text-right">
                     <div class="col-md-4">
-                        <label class="control-label" for="id">ID :</label>
+                        <label class="control-label" for="epf">EPF No :</label>
                     </div>
                     <div class="col-md-8">
-                        <p id="id" th:text="${employeeDetail.id}" class="display_detail"></p>
+                        <p id="epf" th:text="${employeeDetail.epf}" class="display_detail"></p>
                     </div>
-                </div>
-                <div class="form-row text-right">
-                    <div class="col-md-4">
-                        <label class="control-label" for="payRoleNumber">Pay Role No :</label>
-                    </div>
-                    <div class="col-md-8">
-                        <p id="payRoleNumber" th:text="${employeeDetail.payRoleNumber}" class="display_detail"></p>
-                    </div>
-                </div>
-                <div class="form-row text-right">
-                    <div class="col-md-4">
-                        <label class="control-label" for="departmentIdNumber">Depart Id No :</label>
-                    </div>
-                    <div class="col-md-8">
-                        <p id="departmentIdNumber" th:text="${employeeDetail.departmentIdNumber}"
-                           class="display_detail"></p></div>
                 </div>
                 <div class="form-row text-right">
                     <div class="col-md-4">
@@ -101,15 +93,7 @@
                             Birthday</p>
                     </div>
                 </div>
-                <div class="form-row text-right">
-                    <div class="col-md-4">
-                        <label class="control-label" for="bloodGroup">Blood Group :</label>
-                    </div>
-                    <div class="col-md-8">
-                        <p id="bloodGroup" th:text="${employeeDetail.bloodGroup.bloodGroup}" class="display_detail">
-                        </p>
-                    </div>
-                </div>
+
                 <div class="form-row text-right">
                     <div class="col-md-4">
                         <label class="control-label" for="designation">Designation :</label>
@@ -121,7 +105,7 @@
                 </div>
                 <div class="form-row text-right">
                     <div class="col-md-4">
-                        <label class="control-label" for="civilStatus">Civil State :</label>
+                        <label class="control-label" for="civilStatus">Civil Status :</label>
                     </div>
                     <div class="col-md-8">
                         <p id="civilStatus" th:text="${employeeDetail.civilStatus.civilStatus}"
@@ -170,14 +154,6 @@
                     </div>
                     <div class="col-md-8">
                         <p id="land" th:text="${employeeDetail.land}" class="display_detail"></p>
-                    </div>
-                </div>
-                <div class="form-row text-right">
-                    <div class="col-md-4">
-                        <label class="control-label" for="email">Email :</label>
-                    </div>
-                    <div class="col-md-8">
-                        <p id="email" th:text="${employeeDetail.email}" class="display_detail"></p>
                     </div>
                 </div>
                 <div class="form-row text-right">
@@ -309,44 +285,44 @@
                            <p id="employeeWorkingPlaceLandOne" class="display_detail land" th:text="${employeeDetail.workingPlace.landOne}"></p>
                        </div>
                    </div>-->
-                <div class="form-row text-right">
-                    <div class="col-md-4">
-                        <label class="control-label" for="employeeWorkingPlaceLandTwo">Land No Two:</label>
-                    </div>
-                    <div class="col-md-8">
-                        <p id="employeeWorkingPlaceLandTwo" class="display_detail land"
-                           th:text="${employeeDetail.workingPlace.landTwo}"></p>
-                    </div>
-                </div>
-                <div class="form-row text-right">
-                    <div class="col-md-4">
-                        <label class="control-label " for="employeeWorkingPlaceLandThree">Land No Three
-                            :</label>
-                    </div>
-                    <div class="col-md-8">
-                        <p id="employeeWorkingPlaceLandThree" class="display_detail land"
-                           th:text="${employeeDetail.workingPlace.landThree}"></p>
-                    </div>
-                </div>
-                <div class="form-row text-right">
-                    <div class="col-md-4">
-                        <label class="control-label" for="employeeWorkingPlaceLandFour">Land No Four
-                            :</label>
-                    </div>
-                    <div class="col-md-8">
-                        <p id="employeeWorkingPlaceLandFour" class="display_detail land"
-                           th:text="${employeeDetail.workingPlace.landFour}"></p>
-                    </div>
-                </div>
-                <div class="form-row text-right">
-                    <div class="col-md-4">
-                        <label class="control-label" for="employeeWorkingPlaceFaxNumber">Fax No :</label>
-                    </div>
-                    <div class="col-md-8">
-                        <p id="employeeWorkingPlaceFaxNumber" class="display_detail land"
-                           th:text="${employeeDetail.workingPlace.faxNumber}"></p>
-                    </div>
-                </div>
+<!--                <div class="form-row text-right">-->
+<!--                    <div class="col-md-4">-->
+<!--                        <label class="control-label" for="employeeWorkingPlaceLandTwo">Land No Two:</label>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-8">-->
+<!--                        <p id="employeeWorkingPlaceLandTwo" class="display_detail land"-->
+<!--                           th:text="${employeeDetail.workingPlace.landTwo}"></p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="form-row text-right">-->
+<!--                    <div class="col-md-4">-->
+<!--                        <label class="control-label " for="employeeWorkingPlaceLandThree">Land No Three-->
+<!--                            :</label>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-8">-->
+<!--                        <p id="employeeWorkingPlaceLandThree" class="display_detail land"-->
+<!--                           th:text="${employeeDetail.workingPlace.landThree}"></p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="form-row text-right">-->
+<!--                    <div class="col-md-4">-->
+<!--                        <label class="control-label" for="employeeWorkingPlaceLandFour">Land No Four-->
+<!--                            :</label>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-8">-->
+<!--                        <p id="employeeWorkingPlaceLandFour" class="display_detail land"-->
+<!--                           th:text="${employeeDetail.workingPlace.landFour}"></p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="form-row text-right">-->
+<!--                    <div class="col-md-4">-->
+<!--                        <label class="control-label" for="employeeWorkingPlaceFaxNumber">Fax No :</label>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-8">-->
+<!--                        <p id="employeeWorkingPlaceFaxNumber" class="display_detail land"-->
+<!--                           th:text="${employeeDetail.workingPlace.faxNumber}"></p>-->
+<!--                    </div>-->
+<!--                </div>-->
                 <div id="createdByDiv" class="form-row text-right">
                     <div class="col-md-4">
                         <label class="control-label" for="employeeWorkingPlaceCreatedBy">Created By
