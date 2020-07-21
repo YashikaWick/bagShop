@@ -2,7 +2,11 @@ package lk.sanchana.bagShop.asset.supplier.service;
 
 
 
+
+import lk.sanchana.bagShop.asset.item.entity.Item;
 import lk.sanchana.bagShop.asset.supplier.dao.SupplierItemDao;
+import lk.sanchana.bagShop.asset.supplier.entity.Enum.ItemSupplierStatus;
+import lk.sanchana.bagShop.asset.supplier.entity.Supplier;
 import lk.sanchana.bagShop.asset.supplier.entity.SupplierItem;
 import lk.sanchana.bagShop.util.interfaces.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +16,7 @@ import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 
 @Service
 @CacheConfig(cacheNames = "supplierItem")
@@ -32,6 +37,9 @@ public class SupplierItemService implements AbstractService<SupplierItem, Intege
     }
 
     public SupplierItem persist(SupplierItem supplierItem) {
+        if (supplierItem.getId()==null){
+            supplierItem.setItemSupplierStatus(ItemSupplierStatus.CURRENTLY_BUYING);
+        }
         return supplierItemDao.save(supplierItem);
     }
 
@@ -49,4 +57,15 @@ public class SupplierItemService implements AbstractService<SupplierItem, Intege
         return supplierItemDao.findAll(supplierItemExample);
     }
 
+    public SupplierItem findBySupplierAndItem(Supplier supplier, Item item) {
+        return supplierItemDao.findBySupplierAndItem(supplier, item);
+    }
+
+    public List<SupplierItem> findBySupplier(Supplier supplier) {
+        return supplierItemDao.findBySupplier(supplier);
+    }
+
+    public List<SupplierItem> findBySupplierAndItemSupplierStatus(Supplier supplier, ItemSupplierStatus itemSupplierStatus) {
+  return supplierItemDao.findBySupplierAndItemSupplierStatus(supplier,itemSupplierStatus);
+    }
 }

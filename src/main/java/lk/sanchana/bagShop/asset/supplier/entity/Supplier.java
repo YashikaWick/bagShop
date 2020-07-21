@@ -3,10 +3,12 @@ package lk.sanchana.bagShop.asset.supplier.entity;
 import com.fasterxml.jackson.annotation.JsonFilter;
 
 import lk.sanchana.bagShop.asset.purchaseOrder.entity.PurchaseOrder;
+import lk.sanchana.bagShop.asset.supplier.entity.Enum.ItemSupplierStatus;
 import lk.sanchana.bagShop.util.audit.AuditEntity;
-import lombok.*;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
@@ -18,13 +20,12 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonFilter("Supplier")
-@ToString
 public class Supplier extends AuditEntity {
 
     @Size(min = 5, message = "Your Company name cannot be accepted")
     private String name;
 
-    @Column(unique = true)
+    @Column(nullable = false, unique = true)
     private String code;
 
     @Size(min = 2, message = "Your BRN cannot be accepted")
@@ -32,7 +33,6 @@ public class Supplier extends AuditEntity {
 
     @Size(max = 10, min = 9, message = "Mobile number length should be contained 10 and 9")
     private String contactOne;
-
     private String contactTwo;
 
     @Column(unique = true)
@@ -46,4 +46,8 @@ public class Supplier extends AuditEntity {
 
     @OneToMany(mappedBy = "supplier")
     private List<SupplierItem> supplierItems;
+
+    @Enumerated(EnumType.STRING)
+    private ItemSupplierStatus itemSupplierStatus;
+
 }

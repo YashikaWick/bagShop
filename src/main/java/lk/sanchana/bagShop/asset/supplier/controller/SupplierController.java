@@ -2,6 +2,7 @@ package lk.sanchana.bagShop.asset.supplier.controller;
 
 
 
+
 import lk.sanchana.bagShop.asset.supplier.entity.Supplier;
 import lk.sanchana.bagShop.asset.supplier.service.SupplierService;
 import lk.sanchana.bagShop.util.interfaces.AbstractController;
@@ -17,7 +18,7 @@ import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/supplier")
-public  class SupplierController implements AbstractController<Supplier, Integer> {
+public class    SupplierController implements AbstractController<Supplier, Integer> {
     private final SupplierService supplierService;
     private final MakeAutoGenerateNumberService makeAutoGenerateNumberService;
 
@@ -39,14 +40,10 @@ public  class SupplierController implements AbstractController<Supplier, Integer
         return "supplier/supplier";
     }
 
-    @Override
-    public String findById(Integer id, Model model) {
-        return null;
-    }
-
     @GetMapping("/add")
-    public String addForm(Model model) {
+    public String form(Model model) {
         return commonThings(model, new Supplier(), true);
+
     }
 
     @PostMapping(value = {"/save", "/update"})
@@ -96,7 +93,7 @@ public  class SupplierController implements AbstractController<Supplier, Integer
     }
 
     @GetMapping("/{id}")
-    public String view(@PathVariable Integer id, Model model) {
+    public String findById(@PathVariable Integer id, Model model) {
         model.addAttribute("supplierDetail", supplierService.findById(id));
         return "supplier/supplier-detail";
     }

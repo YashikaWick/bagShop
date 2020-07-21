@@ -1,7 +1,6 @@
 package lk.sanchana.bagShop.asset.employee.controller;
 
 
-import lk.sanchana.bagShop.asset.commonAsset.model.Enum.BloodGroup;
 import lk.sanchana.bagShop.asset.commonAsset.model.Enum.CivilStatus;
 import lk.sanchana.bagShop.asset.commonAsset.model.Enum.Gender;
 import lk.sanchana.bagShop.asset.commonAsset.model.Enum.Title;
@@ -57,7 +56,6 @@ public class EmployeeController {
         model.addAttribute("title", Title.values());
         model.addAttribute("gender", Gender.values());
         model.addAttribute("designation", Designation.values());
-        model.addAttribute("bloodGroup", BloodGroup.values());
         model.addAttribute("civilStatus", CivilStatus.values());
         model.addAttribute("employeeStatus", EmployeeStatus.values());
 
@@ -95,7 +93,7 @@ public class EmployeeController {
     public String editEmployeeForm(@PathVariable("id") Integer id, Model model) {
         Employee employee = employeeService.findById(id);
         model.addAttribute("employee", employee);
-        model.addAttribute("newEmployee", employee.getPayRoleNumber());
+//        model.addAttribute("newEmployee", employee.getPayRoleNumber());
         model.addAttribute("addStatus", false);
         model.addAttribute("files", employeeFilesService.employeeFileDownloadLinks(employee));
         return commonThings(model);
@@ -184,13 +182,6 @@ public class EmployeeController {
     //````````````````````````````````````````````````````````````````````````````//
 //----> EmployeeWorkingPlace - details management - start <----//
 
-    //Send form to add working place before find employee
-    @GetMapping(value = "/workingPlace")
-    public String addEmployeeWorkingPlaceForm(Model model) {
-        model.addAttribute("employee", new Employee());
-        model.addAttribute("employeeDetailShow", false);
-        return "employeeWorkingPlace/addEmployeeWorkingPlace";
-    }
 
     //Send a searched employee to add working place
 /*

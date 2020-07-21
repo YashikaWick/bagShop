@@ -48,10 +48,21 @@
                             <input id="id" th:field="*{id}" class="form-control" type="text" readonly/>
                         </div>
                     </div>
+
+                    <!--Code-->
+                    <div id="codeStatus" th:if="${addStatus==false}" class="form-row text-right">
+                        <div class="col-md-4">
+                            <label class="control-label" for="code">Code :</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input id="code" th:field="*{code}" class="form-control" type="text" readonly/>
+                        </div>
+                    </div>
+
                     <!--Name-->
                     <div class="form-row text-right">
                         <div class="col-md-4">
-                            <label class="control-label" for="name">Company Name :</label>
+                            <label class="control-label" for="name">Name :</label>
                         </div>
                         <div class="col-md-8">
                             <input id="name" th:field="*{name}" class="form-control" tabindex="3" type="text" required/>
