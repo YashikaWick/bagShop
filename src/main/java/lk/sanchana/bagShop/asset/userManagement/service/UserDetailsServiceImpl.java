@@ -1,5 +1,13 @@
 package lk.sanchana.bagShop.asset.userManagement.service;
 
+<<<<<<< HEAD
+=======
+
+
+import lk.sanchana.bagShop.asset.userManagement.CustomerUserDetails;
+import lk.sanchana.bagShop.asset.userManagement.dao.UserDao;
+import lk.sanchana.bagShop.asset.userManagement.entity.User;
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

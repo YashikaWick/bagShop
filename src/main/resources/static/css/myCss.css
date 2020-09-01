@@ -6,12 +6,31 @@
     "Iskoola Pota";
     --error-color: #fa370d;
 }
+<<<<<<< HEAD
 /* for login form - start*/
 #loginBack {
     background-image: url('../img/12.jpg');
     margin: 0;
     padding: 0;
     background-size: cover;
+=======
+
+/*div{*/
+/*	border-style: dotted;*/
+/*	color: white;*/
+/*}*/
+
+/*html Background - start*/
+body {
+    background-image: url('../img/bag-1609281_1920.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+/*    filter:brightness(200%);*/
+
+}
+
+/*html Background - end*/
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 
 
 }
@@ -26,6 +45,7 @@
     padding: 0;
     border-radius: 10px;
 
+<<<<<<< HEAD
 }
 #loginPage {
     position: absolute;
@@ -37,6 +57,130 @@
     background: rgba(0,0,0,.2);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.8);
+=======
+/*.btn {*/
+/*    box-shadow: 1px 2px 5px #000000;*/
+/*}*/
+
+/* for login form - start*/
+/*#loginPage {*/
+/*    margin-top: 315px;*/
+/*    color: white;*/
+
+/*}*/
+
+/* for login form - end*/
+/* for summary form - start*/
+.casChqCdt {
+    color: var(--error-color);
+}
+
+/* for summary form - end*/
+/* for billing test show - start*/
+#tableTestBill {
+    font-size: 16px;
+}
+
+#tableTestBill tr td p {
+    color: var(--error-color);
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* for sbilling test show - end*/
+/*main window  - start*/
+.mainWindowText {
+    font-size: 1.5rem;
+    text-shadow: 0 1px 0 #EEE428,
+    0 2px 0 #adc945,
+    0 3px 0 #ACA7C9,
+    0 4px 0 #b9b9b9,
+    0 5px 0 #aaa,
+    0 6px 1px rgba(0, 0, 1, .1),
+    0 0 5px rgba(0, 0, 0, .1),
+    0 1px 3px rgba(0, 0, 0, .3),
+    0 3px 5px rgba(0, 0, 0, .2),
+    0 5px 10px rgba(0, 0, 0, .25),
+    0 10px 10px rgba(0, 0, 0, .2),
+    0 20px 20px rgba(0, 0, 0, .15);
+}
+
+.mainWindowText:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    text-shadow: 5px 5px 2px #EEE428;
+}
+
+.mainWindImg:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    box-shadow: 3px -5px #f5f5f5, -1em 0 .4em #29A1D5;
+}
+
+.logoProperty:hover {
+    padding: 10px;
+    border: 1px solid var(--error-color);
+    background-color: #f5f5f5;
+    box-shadow: 3px -5px 1px #f5f5f5;
+}
+
+/*img {*/
+/*    padding: 3px;*/
+/*    border: 1px solid #29A1D5;*/
+/*    background-color: #29A1D5;*/
+/*}*/
+
+.logoProperty {
+    background-color: #f5f5f5 !important;
+}
+
+/*main windo - properties end */
+/*Nav bar - start*/
+.dropdown-toggle {
+    font-size: 18px;
+!important;
+}
+
+nav {
+    position: sticky;
+}
+#petitionTodayCount{
+    position:absolute;
+    top:30%;
+    left:60%;
+    transform:translate(-10%,-90%);
+}
+/*Nav bar - end*/
+
+/*error pages - properties start */
+
+/*error pages - properties end */
+/*Error Message Colour - star*/
+.error {
+    font-family: 'Open Sans', 'Segoe UI';
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--error-color);
+}
+
+#error {
+    text-align: center;
+}
+
+#errorCode {
+    margin-top: 10%;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    font-style: oblique;
+    font-size: 40px;
+    color: #3299ff;
+    background-color: #ffddca;
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
     border-radius: 10px;
 
 

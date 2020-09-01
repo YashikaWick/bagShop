@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package lk.sanchana.bagShop.configuration;
 
 import org.springframework.context.annotation.Bean;
@@ -15,6 +16,28 @@ import org.springframework.security.web.authentication.logout.LogoutSuccessHandl
 import org.springframework.security.web.session.HttpSessionEventPublisher;
 
 @Configuration
+=======
+ package lk.sanchana.bagShop.configuration;
+
+ import lk.sanchana.bagShop.asset.userManagement.service.UserDetailsServiceImpl;
+ import org.springframework.context.annotation.Bean;
+ import org.springframework.context.annotation.Configuration;
+ import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+ import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+ import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+ import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+ import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+ import org.springframework.security.config.http.SessionCreationPolicy;
+ import org.springframework.security.core.session.SessionRegistry;
+ import org.springframework.security.core.session.SessionRegistryImpl;
+ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+ import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+ import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
+ import org.springframework.security.web.session.HttpSessionEventPublisher;
+
+ @Configuration
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
@@ -68,6 +91,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+<<<<<<< HEAD
         http.csrf().disable();
             http.authorizeRequests().antMatchers("/").permitAll();
         // For developing easy to give permission all lin
@@ -124,5 +148,67 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf(AbstractHttpConfigurer::disable)
                 .exceptionHandling();
   */  }
+=======
+           http.csrf().disable();
+            http.authorizeRequests().antMatchers("/").permitAll();
+
+        // For developing easy to give permission all lin
+
+
+
+//        http.authorizeRequests(
+//                        authorizeRequests ->
+//                                authorizeRequests
+//                                        //Anytime users can access without login
+//                                        //to see actuator details
+//                                        .antMatchers(ALL_PERMIT_URL).permitAll()
+//                                        //this is used the normal admin to give access every url mapping
+//                                        .antMatchers("/employee").hasRole("ADMIN")
+//                                        //Need to login for access those are
+//                                     .antMatchers("/employee/**").hasRole("ADMIN")
+//                                           .antMatchers("/employee1/**").hasRole("MANAGER")
+//                                           .antMatchers("/user/**").hasRole("ADMIN")
+//                                           .antMatchers("/petition/**").hasRole("ADMIN")
+//                                           .antMatchers("/minutePetition/**").hasRole("MANAGER")
+//                                           .antMatchers("/invoiceProcess/add").hasRole("CASHIER")
+//                                        .anyRequest()
+//                                        .authenticated())
+//                // Login form
+//                .formLogin(
+//                        formLogin ->
+//                                formLogin
+//                                        .loginPage("/login")
+//                                        .loginProcessingUrl("/login")
+//                                        //Username and password for validation
+//                                        .usernameParameter("username")
+//                                        .passwordParameter("password")
+//                                        .successHandler(customAuthenticationSuccessHandler())
+//                                        .failureForwardUrl("/login")
+//                          )
+//                //Logout controlling
+//                .logout(
+//                        logout ->
+//                                logout
+//                                        .logoutUrl("/logout")
+//                                        .logoutSuccessHandler(customLogoutSuccessHandler())
+//                                        .deleteCookies("JSESSIONID")
+//                                        .invalidateHttpSession(true)
+//                                        .clearAuthentication(true))
+//                //session management
+//                .sessionManagement(
+//                        sessionManagement ->
+//                                sessionManagement
+//                                        .sessionFixation().migrateSession()
+//                                        .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
+//                                        .invalidSessionUrl("/login")
+//                                        .maximumSessions(1)
+//                                        .expiredUrl("/l")
+//                                        .sessionRegistry(sessionRegistry()))
+//                //Cross site disable
+//                .csrf(AbstractHttpConfigurer::disable)
+//                .exceptionHandling();
+
+    }
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 }
 

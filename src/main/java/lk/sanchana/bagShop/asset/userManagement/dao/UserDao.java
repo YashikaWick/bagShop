@@ -1,5 +1,12 @@
 package lk.sanchana.bagShop.asset.userManagement.dao;
 
+<<<<<<< HEAD
+=======
+
+
+import lk.sanchana.bagShop.asset.employee.entity.Employee;
+import lk.sanchana.bagShop.asset.userManagement.entity.User;
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

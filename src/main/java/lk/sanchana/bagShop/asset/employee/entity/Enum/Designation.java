@@ -8,6 +8,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum Designation {
     //All station can check
+<<<<<<< HEAD
     CGE("Commissioner General Of Excise"),
     ACGE("Additional Commissioner General Of Excise"),
     CE("Commissioner Of Excise"),
@@ -26,6 +27,12 @@ public enum Designation {
     EC("Excise Corporal"),
     EG("Excise Guard"),
     ED("Excise Driver"), Owner("");
+=======
+    OWNER("Owner"),
+    CASHIER("Cashier"),
+    ACCOUNTANT("Accountant"),
+    SK("Stock Keeper)");
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 
     private final String designation;
 }

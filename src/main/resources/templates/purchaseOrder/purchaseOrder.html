@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<<<<<<< HEAD
 <head data-th-replace="~{fragments/header :: headerFragment}">
+=======
+<head th:replace="~{fragments/header :: headerFragment}">
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
     <meta charset="UTF-8">
     <title>purchaseOrder</title>
 </head>
 <body>
+<<<<<<< HEAD
 <nav data-th-replace="~{fragments/navBar :: navBarFragment}"></nav>
+=======
+<nav th:replace="~{fragments/navBar :: navBarFragment}"></nav>
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 
 <!--heading Area-->
 <div class="container-fluid bg-dark form-Border">
@@ -18,7 +26,11 @@
         <div class="col">
             <h2 class="text-white text-center">
                 <strong>
+<<<<<<< HEAD
                   Pending Purchase Order List
+=======
+                    Purchase Request List
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
                 </strong>
             </h2>
         </div>
@@ -32,24 +44,37 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 <div class="container-fluid  text-center">
     <!--Table view-->
     <div class="col">
         <div class="col" id="purchaseRequestListPresent"
              data-th-if="${not #lists.isEmpty(purchaseOrders)}">
+=======
+<div class="container-fluid bg-dark formBorder text-center">
+    <!--Table view-->
+    <div class="col">
+        <div class="col" id="purchaseRequestListPresent"
+             th:if="${not #lists.isEmpty(purchaseOrders)}">
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
             <table class="table table-hover table-striped" id="myTable">
                 <thead>
                     <tr>
                         <th> Index</th>
+<<<<<<< HEAD
                         <th> Code</th>
                         <th> Supplier</th>
                         <th> Priority</th>
                         <th> Amount</th>
                         <th> Created Date</th>
+=======
+                        <th> Date</th>
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
                         <th> Modify</th>
                     </tr>
                 </thead>
                 <tbody>
+<<<<<<< HEAD
                     <tr data-th-each="purchaseOrder, rowCount : ${purchaseOrders}">
                         <th data-th-text="${rowCount.count}"></th>
                         <th data-th-text="${purchaseOrder.code}"></th>
@@ -68,13 +93,40 @@
                                 <!--data-th-if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}"--> <i
                                     class="fa fa-trash" style="font-size: 15px"></i> Delete</a>
                         </th>
+=======
+                    <tr th:each="purchaseOrder, rowCount : ${purchaseOrders}">
+                        <th th:text="${rowCount.count}"></th>
+                       <!-- <th th:text="${purchaseOrder.purchaseOrderDate}"></th>-->
+                        <th th:if="${purchaseOrder !=true}">
+                            <a th:href="${'/purchaseOrderItem/purchaseOrder/' + purchaseOrder.id}" class="btn btn-primary btn-sm"><i
+                                    class="fa fa-folder-open" style="font-size: 15px"></i>&nbsp;Item Price</a>
+                            <a th:href="${'/purchaseOrder/' + purchaseOrder.id}" class="btn btn-primary btn-sm"><i
+                                    class="fa fa-folder-open" style="font-size: 15px"></i>&nbsp;View</a>
+                            <a th:href="${'/purchaseOrder/edit/' + purchaseOrder.id}" class="btn btn-success btn-sm"><i
+                                    class="fa fa-edit" style="font-size: 15px"></i>&nbsp;Edit</a>
+                            <a th:href="${'/purchaseOrder/delete/' + purchaseOrder.id}" class="btn btn-danger btn-sm">
+                                <!--th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}"--> <i
+                                    class="fa fa-trash" style="font-size: 15px"></i> Delete</a>
+                        </th>
+
+                        <!--<th>
+                            <a id="purchaseRequestView" th:href="${'/purchaseOrder/view' + purchaseOrder.id}" class="btn btn-primary btn-sm"><i class="fa fa-folder-open" style="font-size: 15px"></i>&nbsp;View</a>
+                            <a id="purchaseRequestEdit" th:href="${'/purchaseOrder/edit/' + purchaseOrder.id}" class="btn btn-success btn-sm"><i class="fa fa-edit" style="font-size: 15px"></i>&nbsp;Edit</a>
+                            <a id="purchaseRequestRemove" th:href="${'/purchaseOrder/delete/' + purchaseOrder.id}" class="btn btn-danger btn-sm">
+                                &lt;!&ndash;th:if="${#authorization.expurchaseOrderession('hasRole(''ROLE_ADMIN'')')}"&ndash;&gt;<i class="fa fa-trash" style="font-size: 15px"></i> Delete</a>
+                        </th>-->
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
     <!--Error-->
+<<<<<<< HEAD
     <div class="row" data-th-if="${ #lists.isEmpty(purchaseOrders)}">
+=======
+    <div class="row" th:if="${ #lists.isEmpty(purchaseOrders)}">
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
         <div class="col-sm-12">
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -94,9 +146,15 @@
 </div>
 
 <!--footer include-->
+<<<<<<< HEAD
 <footer data-th-replace="~{fragments/footer :: footerFragment}"></footer>
 <!--script include-->
 <script data-th-replace="~{fragments/script :: scriptFragment}"></script>
+=======
+<footer th:replace="~{fragments/footer :: footerFragment}"></footer>
+<!--script include-->
+<script th:replace="~{fragments/script :: scriptFragment}"></script>
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 
 </body>
 </html>

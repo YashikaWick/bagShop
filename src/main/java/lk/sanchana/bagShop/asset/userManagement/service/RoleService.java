@@ -1,5 +1,13 @@
 package lk.sanchana.bagShop.asset.userManagement.service;
 
+<<<<<<< HEAD
+=======
+
+
+import lk.sanchana.bagShop.asset.userManagement.dao.RoleDao;
+import lk.sanchana.bagShop.asset.userManagement.entity.Role;
+import lk.sanchana.bagShop.util.interfaces.AbstractService;
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.*;
 import org.springframework.data.domain.Example;

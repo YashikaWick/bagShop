@@ -1,6 +1,15 @@
 package lk.sanchana.bagShop.asset.employee.service;
 
 
+<<<<<<< HEAD
+=======
+
+import lk.sanchana.bagShop.asset.commonAsset.model.FileInfo;
+import lk.sanchana.bagShop.asset.employee.controller.EmployeeController;
+import lk.sanchana.bagShop.asset.employee.dao.EmployeeFilesDao;
+import lk.sanchana.bagShop.asset.employee.entity.Employee;
+import lk.sanchana.bagShop.asset.employee.entity.EmployeeFiles;
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;

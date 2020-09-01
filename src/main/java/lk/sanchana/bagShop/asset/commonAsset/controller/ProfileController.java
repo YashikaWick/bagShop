@@ -1,9 +1,16 @@
 package lk.sanchana.bagShop.asset.commonAsset.controller;
 
 
+<<<<<<< HEAD
 
 
 
+=======
+import lk.sanchana.bagShop.asset.userManagement.entity.PasswordChange;
+import lk.sanchana.bagShop.asset.userManagement.entity.User;
+import lk.sanchana.bagShop.asset.userManagement.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -13,7 +20,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import javax.validation.Valid;
 import java.security.Principal;
 

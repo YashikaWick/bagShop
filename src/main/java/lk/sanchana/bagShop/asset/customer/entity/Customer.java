@@ -1,5 +1,6 @@
 package lk.sanchana.bagShop.asset.customer.entity;
 
+<<<<<<< HEAD
 
 
 import com.fasterxml.jackson.annotation.JsonFilter;
@@ -8,6 +9,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+=======
+import com.fasterxml.jackson.annotation.JsonFilter;
+import lk.sanchana.bagShop.asset.commonAsset.model.Enum.Title;
+import lk.sanchana.bagShop.util.audit.AuditEntity;
+import lombok.*;
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -44,4 +51,8 @@ public class Customer extends AuditEntity {
 
     @Column(unique = true)
     private String email;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b

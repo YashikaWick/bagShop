@@ -1,5 +1,23 @@
 package lk.sanchana.bagShop.asset.employee.controller;
 
+<<<<<<< HEAD
+=======
+
+import lk.sanchana.bagShop.asset.commonAsset.model.Enum.CivilStatus;
+import lk.sanchana.bagShop.asset.commonAsset.model.Enum.Gender;
+import lk.sanchana.bagShop.asset.commonAsset.model.Enum.Title;
+import lk.sanchana.bagShop.asset.commonAsset.service.CommonService;
+import lk.sanchana.bagShop.asset.employee.entity.Employee;
+import lk.sanchana.bagShop.asset.employee.entity.EmployeeFiles;
+import lk.sanchana.bagShop.asset.employee.entity.Enum.Designation;
+import lk.sanchana.bagShop.asset.employee.entity.Enum.EmployeeStatus;
+import lk.sanchana.bagShop.asset.employee.service.EmployeeFilesService;
+import lk.sanchana.bagShop.asset.employee.service.EmployeeService;
+import lk.sanchana.bagShop.asset.userManagement.entity.User;
+import lk.sanchana.bagShop.asset.userManagement.service.UserService;
+import lk.sanchana.bagShop.util.service.DateTimeAgeService;
+import org.springframework.beans.factory.annotation.Autowired;
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -8,11 +26,19 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 import javax.validation.Valid;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 @RequestMapping("/employee")
 @Controller
 public class EmployeeController {
@@ -40,7 +66,10 @@ public class EmployeeController {
         model.addAttribute("title", Title.values());
         model.addAttribute("gender", Gender.values());
         model.addAttribute("designation", Designation.values());
+<<<<<<< HEAD
         model.addAttribute("bloodGroup", BloodGroup.values());
+=======
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
         model.addAttribute("civilStatus", CivilStatus.values());
         model.addAttribute("employeeStatus", EmployeeStatus.values());
 
@@ -78,7 +107,7 @@ public class EmployeeController {
     public String editEmployeeForm(@PathVariable("id") Integer id, Model model) {
         Employee employee = employeeService.findById(id);
         model.addAttribute("employee", employee);
-        model.addAttribute("newEmployee", employee.getPayRoleNumber());
+//        model.addAttribute("newEmployee", employee.getPayRoleNumber());
         model.addAttribute("addStatus", false);
         model.addAttribute("files", employeeFilesService.employeeFileDownloadLinks(employee));
         return commonThings(model);
@@ -118,7 +147,11 @@ public class EmployeeController {
                     userService.persist(user);
                 }
             }
+<<<<<<< HEAD
             //save employee img file
+=======
+            //save employee images file
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
             for (MultipartFile file : employee.getFiles()) {
                 if (file.getOriginalFilename() != null) {
                     EmployeeFiles employeeFiles = employeeFilesService.findByName(file.getOriginalFilename());
@@ -167,6 +200,7 @@ public class EmployeeController {
     //````````````````````````````````````````````````````````````````````````````//
 //----> EmployeeWorkingPlace - details management - start <----//
 
+<<<<<<< HEAD
     //Send form to add working place before find employee
     @GetMapping(value = "/workingPlace")
     public String addEmployeeWorkingPlaceForm(Model model) {
@@ -174,6 +208,8 @@ public class EmployeeController {
         model.addAttribute("employeeDetailShow", false);
         return "employeeWorkingPlace/addEmployeeWorkingPlace";
     }
+=======
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 
     //Send a searched employee to add working place
 /*

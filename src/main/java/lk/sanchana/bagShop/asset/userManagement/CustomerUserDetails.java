@@ -1,5 +1,11 @@
 package lk.sanchana.bagShop.asset.userManagement;
 
+<<<<<<< HEAD
+=======
+
+
+import lk.sanchana.bagShop.asset.userManagement.entity.User;
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;

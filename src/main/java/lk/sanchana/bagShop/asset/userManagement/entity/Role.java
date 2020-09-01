@@ -1,7 +1,11 @@
 package lk.sanchana.bagShop.asset.userManagement.entity;
 
 
+<<<<<<< HEAD
 
+=======
+import lk.sanchana.bagShop.util.audit.AuditEntity;
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

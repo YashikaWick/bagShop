@@ -2,6 +2,18 @@ package lk.sanchana.bagShop.asset.commonAsset.service;
 
 
 
+<<<<<<< HEAD
+=======
+import lk.sanchana.bagShop.asset.employee.controller.EmployeeRestController;
+import lk.sanchana.bagShop.asset.item.entity.Item;
+import lk.sanchana.bagShop.asset.item.service.ItemService;
+import lk.sanchana.bagShop.asset.supplier.entity.Enum.ItemSupplierStatus;
+import lk.sanchana.bagShop.asset.supplier.entity.Supplier;
+import lk.sanchana.bagShop.asset.supplier.entity.SupplierItem;
+import lk.sanchana.bagShop.asset.supplier.service.SupplierItemService;
+import lk.sanchana.bagShop.asset.supplier.service.SupplierService;
+import lk.sanchana.bagShop.util.service.MakeAutoGenerateNumberService;
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
@@ -24,7 +36,11 @@ public class CommonService {
         this.supplierItemService = supplierItemService;
     }
 
+<<<<<<< HEAD
     public List< Supplier > commonSupplierSearch(Supplier supplier) {
+=======
+    public List<Supplier> commonSupplierSearch(Supplier supplier) {
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
         List<Supplier> suppliers;
         if (supplier.getContactOne() != null) {
             String contactNumber = makeAutoGenerateNumberService.phoneNumberLengthValidator(supplier.getContactOne());
@@ -66,9 +82,12 @@ public class CommonService {
 
     public String purchaseOrder(Supplier supplier, Model model, String htmlFileLocation) {
         List<Supplier> suppliers = commonSupplierSearch(supplier);
+<<<<<<< HEAD
 
         System.out.println(" i am here" + suppliers.size());
 
+=======
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
         model.addAttribute("searchAreaShow", false);
         if (suppliers.size() == 1) {
             model.addAttribute("supplierDetail", suppliers.get(0));
@@ -102,8 +121,13 @@ public class CommonService {
         return mobileTwo;
     }
 
+<<<<<<< HEAD
     public List< Item > activeItemsFromSupplier(Supplier supplier) {
         List< SupplierItem > supplierItems = supplierItemService.findBySupplierAndItemSupplierStatus(supplier, ItemSupplierStatus.CURRENTLY_BUYING);
+=======
+    public List<Item> activeItemsFromSupplier(Supplier supplier) {
+        List<SupplierItem> supplierItems = supplierItemService.findBySupplierAndItemSupplierStatus(supplier, ItemSupplierStatus.CURRENTLY_BUYING);
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
         List<Item> items = new ArrayList<>();
         for (SupplierItem supplierItem : supplierItems) {
             items.add(supplierItem.getItem());
@@ -130,7 +154,10 @@ public class CommonService {
                 .build()
                 .toString());
     }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 }
 

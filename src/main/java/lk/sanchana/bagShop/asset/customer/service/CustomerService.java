@@ -1,17 +1,32 @@
 package lk.sanchana.bagShop.asset.customer.service;
 
+<<<<<<< HEAD
 
 
+=======
+import lk.sanchana.bagShop.asset.customer.dao.CustomerDao;
+import lk.sanchana.bagShop.asset.customer.entity.Customer;
+import lk.sanchana.bagShop.util.interfaces.AbstractService;
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
+<<<<<<< HEAD
 import java.util.*;
 
 @Service
 @CacheConfig( cacheNames = "customer" )
 public class CustomerService implements AbstractService< Customer, Integer> {
+=======
+
+import java.util.List;
+
+@Service
+@CacheConfig( cacheNames = "customer" )
+public class CustomerService implements AbstractService<Customer, Integer> {
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
     private final CustomerDao customerDao;
 
     @Autowired
@@ -48,4 +63,8 @@ public class CustomerService implements AbstractService< Customer, Integer> {
     public Customer lastCustomer(){
         return customerDao.findFirstByOrderByIdDesc();
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b

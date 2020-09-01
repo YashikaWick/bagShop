@@ -1,5 +1,14 @@
 package lk.sanchana.bagShop.asset.supplier.service;
 
+<<<<<<< HEAD
+=======
+
+
+
+import lk.sanchana.bagShop.asset.supplier.dao.SupplierDao;
+import lk.sanchana.bagShop.asset.supplier.entity.Supplier;
+import lk.sanchana.bagShop.util.interfaces.AbstractService;
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.data.domain.Example;
@@ -8,9 +17,16 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+<<<<<<< HEAD
 @Service
 @CacheConfig(cacheNames = "supplier")
 public class SupplierService implements AbstractService< Supplier, Integer> {
+=======
+
+@Service
+@CacheConfig( cacheNames = "supplier" )
+public class SupplierService implements AbstractService<Supplier, Integer> {
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
     private final SupplierDao supplierDao;
 
     @Autowired
@@ -27,9 +43,12 @@ public class SupplierService implements AbstractService< Supplier, Integer> {
     }
 
     public Supplier persist(Supplier supplier) {
+<<<<<<< HEAD
         if (supplier.getId() == null) {
             supplier.setItemSupplierStatus(ItemSupplierStatus.CURRENTLY_BUYING);
         }
+=======
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
         return supplierDao.save(supplier);
     }
 
@@ -47,6 +66,7 @@ public class SupplierService implements AbstractService< Supplier, Integer> {
         return supplierDao.findAll(supplierExample);
     }
 
+<<<<<<< HEAD
     public Supplier lastSupplier() {
         return supplierDao.findFirstByOrderByIdDesc();
     }
@@ -54,4 +74,9 @@ public class SupplierService implements AbstractService< Supplier, Integer> {
     public Supplier findByIdAndItemSupplierStatus(Integer supplierId, ItemSupplierStatus itemSupplierStatus) {
     return supplierDao.findByIdAndItemSupplierStatus(supplierId,itemSupplierStatus);
     }
+=======
+    public Supplier lastSupplier(){
+        return supplierDao.findFirstByOrderByIdDesc();
+    }
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 }

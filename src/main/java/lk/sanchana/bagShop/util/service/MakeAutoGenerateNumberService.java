@@ -43,4 +43,8 @@ public class MakeAutoGenerateNumberService {
         return number;
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b

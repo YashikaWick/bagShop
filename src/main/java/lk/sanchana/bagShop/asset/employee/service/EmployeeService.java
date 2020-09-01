@@ -1,5 +1,13 @@
 package lk.sanchana.bagShop.asset.employee.service;
 
+<<<<<<< HEAD
+=======
+
+
+import lk.sanchana.bagShop.asset.employee.dao.EmployeeDao;
+import lk.sanchana.bagShop.asset.employee.entity.Employee;
+import lk.sanchana.bagShop.util.interfaces.AbstractService;
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.*;
 import org.springframework.data.domain.Example;
@@ -12,7 +20,11 @@ import javax.transaction.Transactional;
 @Service
 // spring transactional annotation need to tell spring to this method work through the project
 @CacheConfig(cacheNames = "employee")
+<<<<<<< HEAD
 public class EmployeeService implements AbstractService< Employee, Integer> {
+=======
+public class EmployeeService implements AbstractService<Employee, Integer> {
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 
     private final EmployeeDao employeeDao;
 

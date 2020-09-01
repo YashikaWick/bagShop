@@ -1,10 +1,23 @@
 package lk.sanchana.bagShop;
 
 
+<<<<<<< HEAD
+=======
+import lk.sanchana.bagShop.asset.commonAsset.model.Enum.CivilStatus;
+import lk.sanchana.bagShop.asset.commonAsset.model.Enum.Gender;
+import lk.sanchana.bagShop.asset.commonAsset.model.Enum.Title;
+import lk.sanchana.bagShop.asset.employee.entity.Employee;
+import lk.sanchana.bagShop.asset.employee.entity.Enum.Designation;
+import lk.sanchana.bagShop.asset.employee.entity.Enum.EmployeeStatus;
+import lk.sanchana.bagShop.asset.employee.service.EmployeeService;
+import lk.sanchana.bagShop.asset.userManagement.entity.Role;
+import lk.sanchana.bagShop.asset.userManagement.entity.User;
+import lk.sanchana.bagShop.asset.userManagement.service.RoleService;
+import lk.sanchana.bagShop.asset.userManagement.service.UserService;
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.time.LocalDate;
 import java.util.stream.Collectors;
 @RestController
@@ -34,6 +47,7 @@ public class ApplicationCreateRestController {
 
 //Employee
         Employee employee = new Employee();
+<<<<<<< HEAD
         employee.setName("Admin User");
         employee.setCallingName("Admin");
         employee.setName("901142122V");
@@ -43,6 +57,17 @@ public class ApplicationCreateRestController {
         employee.setGender(Gender.MALE);
         employee.setDesignation(Designation.Owner);
         employee.setCivilStatus(CivilStatus.UNMARRIED);
+=======
+//        employee.setPayRoleNumber("11111111");
+        employee.setName("Admin User");
+        employee.setCallingName("Admin");
+        employee.setName("908670000V");
+        employee.setMobileOne("0750000000");
+        employee.setTitle(Title.MR);
+        employee.setGender(Gender.MALE);
+        employee.setDesignation(Designation.OWNER);
+        employee.setCivilStatus(CivilStatus.SINGLE);
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
         employee.setEmployeeStatus(EmployeeStatus.WORKING);
         employee.setDateOfBirth(LocalDate.now().minusYears(18));
         employee.setDateOfAssignment(LocalDate.now());
@@ -57,9 +82,9 @@ public class ApplicationCreateRestController {
         String message = "Username:- " + user.getUsername() + "\n Password:- " + user.getPassword();
         user.setEnabled(true);
         user.setRoles(roleService.findAll()
-                              .stream()
-                              .filter(role -> role.getRoleName().equals("ADMIN"))
-                              .collect(Collectors.toList()));
+                .stream()
+                .filter(role -> role.getRoleName().equals("ADMIN"))
+                .collect(Collectors.toList()));
         userService.persist(user);
 
         return message;

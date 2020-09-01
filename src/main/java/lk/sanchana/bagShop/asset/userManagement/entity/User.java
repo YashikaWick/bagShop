@@ -3,8 +3,15 @@ package lk.sanchana.bagShop.asset.userManagement.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+<<<<<<< HEAD
 import com.sun.istack.NotNull;
 
+=======
+
+
+import lk.sanchana.bagShop.asset.employee.entity.Employee;
+import lk.sanchana.bagShop.util.audit.AuditEntity;
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +21,11 @@ import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+<<<<<<< HEAD
 import java.util.*;
+=======
+import java.util.List;
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 
 @Entity
 @Getter

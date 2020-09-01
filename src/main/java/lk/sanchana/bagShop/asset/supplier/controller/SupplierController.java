@@ -1,6 +1,15 @@
 package lk.sanchana.bagShop.asset.supplier.controller;
 
 
+<<<<<<< HEAD
+=======
+
+
+import lk.sanchana.bagShop.asset.supplier.entity.Supplier;
+import lk.sanchana.bagShop.asset.supplier.service.SupplierService;
+import lk.sanchana.bagShop.util.interfaces.AbstractController;
+import lk.sanchana.bagShop.util.service.MakeAutoGenerateNumberService;
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +21,11 @@ import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/supplier")
+<<<<<<< HEAD
 public  class SupplierController implements AbstractController< Supplier, Integer> {
+=======
+public class    SupplierController implements AbstractController<Supplier, Integer> {
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
     private final SupplierService supplierService;
     private final MakeAutoGenerateNumberService makeAutoGenerateNumberService;
 
@@ -35,8 +48,14 @@ public  class SupplierController implements AbstractController< Supplier, Intege
     }
 
     @GetMapping("/add")
+<<<<<<< HEAD
     public String addForm(Model model) {
         return commonThings(model, new Supplier(), true);
+=======
+    public String form(Model model) {
+        return commonThings(model, new Supplier(), true);
+
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
     }
 
     @PostMapping(value = {"/save", "/update"})
@@ -57,12 +76,21 @@ public  class SupplierController implements AbstractController< Supplier, Intege
 
             if (DBSupplier == null) {
                 //need to generate new one
+<<<<<<< HEAD
                 supplier.setCode("JNS"+makeAutoGenerateNumberService.numberAutoGen(null).toString());
             } else {
                 System.out.println("last supplier not null");
                 //if there is supplier in db need to get that supplier's code and increase its value
                 String previousCode = DBSupplier.getCode().substring(3);
                 supplier.setCode("JNS"+makeAutoGenerateNumberService.numberAutoGen(previousCode).toString());
+=======
+                supplier.setCode("SS"+makeAutoGenerateNumberService.numberAutoGen(null).toString());
+            } else {
+                System.out.println("last supplier not null");
+                //if there is supplier in db need to get that supplier's code and increase its value
+                String previousCode = DBSupplier.getCode().substring(2);
+                supplier.setCode("SS"+makeAutoGenerateNumberService.numberAutoGen(previousCode).toString());
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
             }
             //send welcome message and email
             if (supplier.getEmail() != null) {
@@ -86,7 +114,11 @@ public  class SupplierController implements AbstractController< Supplier, Intege
     }
 
     @GetMapping("/{id}")
+<<<<<<< HEAD
     public String view(@PathVariable Integer id, Model model) {
+=======
+    public String findById(@PathVariable Integer id, Model model) {
+>>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
         model.addAttribute("supplierDetail", supplierService.findById(id));
         return "supplier/supplier-detail";
     }
