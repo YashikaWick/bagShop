@@ -1,22 +1,13 @@
 package lk.sanchana.bagShop.asset.userManagement.controller;
 
-import lk.sanchana.bagShop.asset.employee.entity.Employee;
-import lk.sanchana.bagShop.asset.employee.entity.Enum.Designation;
-import lk.sanchana.bagShop.asset.employee.entity.Enum.EmployeeStatus;
-import lk.sanchana.bagShop.asset.employee.service.EmployeeService;
-import lk.sanchana.bagShop.asset.userManagement.entity.User;
-import lk.sanchana.bagShop.asset.userManagement.service.RoleService;
-import lk.sanchana.bagShop.asset.userManagement.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 
 import javax.validation.Valid;
-import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,7 +20,7 @@ public class UserController {
 
     @Autowired
     public UserController(UserService userService, EmployeeService employeeService, RoleService roleService
-                         ) {
+    ) {
         this.userService = userService;
         this.employeeService = employeeService;
         this.roleService = roleService;

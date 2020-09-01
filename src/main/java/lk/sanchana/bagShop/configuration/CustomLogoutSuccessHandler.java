@@ -1,11 +1,5 @@
 package lk.sanchana.bagShop.configuration;
 
-
-import lk.sanchana.bagShop.asset.userManagement.entity.Enum.UserSessionLogStatus;
-import lk.sanchana.bagShop.asset.userManagement.entity.User;
-import lk.sanchana.bagShop.asset.userManagement.entity.UserSessionLog;
-import lk.sanchana.bagShop.asset.userManagement.service.UserService;
-import lk.sanchana.bagShop.asset.userManagement.service.UserSessionLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;

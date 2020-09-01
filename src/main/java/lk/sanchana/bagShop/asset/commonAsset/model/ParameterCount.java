@@ -1,5 +1,6 @@
 package lk.sanchana.bagShop.asset.commonAsset.model;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
