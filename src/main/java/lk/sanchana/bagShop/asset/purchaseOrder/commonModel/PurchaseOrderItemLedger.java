@@ -1,4 +1,4 @@
-package lk.sanchana.bagShop.asset.PurchaseOrder.commonModel;
+package lk.sanchana.bagShop.asset.purchaseOrder.commonModel;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
