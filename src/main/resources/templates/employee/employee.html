@@ -41,22 +41,14 @@
 
    <!-- <div class="col-md-1"></div>-->
 
-<<<<<<< HEAD
     <div class="col-md-8  text-center">
-=======
-    <div class="col-md-8  bg-dark formBorder text-center">
->>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
         <div class="col">
             <div class="col" id="employeeListPresent" th:if="${not #lists.isEmpty(employees)}">
                 <table class="table table-hover table-striped" id="myTable">
                     <thead>
                     <tr>
                         <th> Index</th>
-<<<<<<< HEAD
                         <th> Pay Role Number</th>
-=======
-                        <th> EPF No</th>
->>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
                         <th> Name</th>
                         <th> Mobile</th>
                         <th> Designation</th>
@@ -67,11 +59,7 @@
                     <tbody>
                     <tr th:each="employee, rowCount : ${employees}">
                         <th th:text="${rowCount.count}"></th>
-<<<<<<< HEAD
                         <th th:text="${employee.payRoleNumber}"></th>
-=======
-                        <th th:text="${employee.epf}"></th>
->>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
                         <th th:text="${employee.callingName}"></th>
                         <th th:text="${employee.mobileOne}"></th>
                         <th th:text="${employee.designation.designation}"></th>
