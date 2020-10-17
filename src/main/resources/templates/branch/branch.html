@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments/header :: headerFragment}">
+<head data-th-replace="~{fragments/header :: headerFragment}">
     <meta charset="UTF-8">
     <title>branch</title>
 </head>
 <body>
-<nav th:replace="~{fragments/navBar :: navBarFragment}"></nav>
+<nav data-th-replace="~{fragments/navBar :: navBarFragment}"></nav>
 <!--heading Area-->
 <div class="container-fluid bg-dark form-Border">
     <div class="row text-center formManagement border-info">
@@ -33,10 +33,12 @@
     </div>
 </div>
 <!--Branches List-->
-<div class="container-fluid bg-dark formBorder text-center">
+
+<div class="container-fluid text-center">
+
     <!--Table view-->
     <div class="col">
-        <div class="col" id="branchListPresent" th:if="${not #lists.isEmpty(branchs)}">
+        <div class="col" id="branchListPresent" data-th-if="${not #lists.isEmpty(branchs)}">
             <table class="table table-hover table-striped" id="myTable">
                 <thead>
                 <tr>
@@ -49,19 +51,21 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="branch, rowCount : ${branchs}">
-                    <th th:text="${rowCount.count}"></th>
-                    <th th:text="${branch.name}"></th>
-                    <th th:text="${branch.land}"></th>
-                    <th th:text="${branch.address}"></th>
-                    <th th:text="${branch.email}"></th>
+                <tr data-th-each="branch, rowCount : ${branchs}">
+                    <th data-th-text="${rowCount.count}"></th>
+                    <th data-th-text="${branch.name}"></th>
+                    <th data-th-text="${branch.land}"></th>
+                    <th data-th-text="${branch.address}"></th>
+                    <th data-th-text="${branch.email}"></th>
                     <th>
-                        <a id="branchView" th:href="${'/branch/' + branch.id}" class="btn btn-primary btn-sm"><i
+                        <a id="branchView" data-th-href="${'/branch/' + branch.id}" class="btn btn-primary btn-sm"><i
                                 class="fa fa-folder-open" style="font-size: 15px"></i>&nbsp;View</a>
-                        <a id="branchEdit" th:href="${'/branch/edit/' + branch.id}" class="btn btn-success btn-sm"><i
+                        <a id="branchEdit" data-th-href="${'/branch/edit/' + branch.id}"
+                           class="btn btn-success btn-sm"><i
                                 class="fa fa-edit" style="font-size: 15px"></i>&nbsp;Edit</a>
-                        <a id="branchRemove" th:href="${'/branch/delete/' + branch.id}" class="btn btn-danger btn-sm">
-                            <!--th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}" --> <i
+                        <a id="branchRemove" data-th-href="${'/branch/delete/' + branch.id}"
+                           class="btn btn-danger btn-sm">
+                            <!--data-th-if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}" --> <i
                                 class="fa fa-trash" style="font-size: 15px"></i>
                             Delete</a>
                     </th>
@@ -71,7 +75,7 @@
         </div>
     </div>
     <!--Error-->
-    <div class="row" th:if="${ #lists.isEmpty(branchs)}">
+    <div class="row" data-th-if="${ #lists.isEmpty(branchs)}">
         <div class="col-sm-12">
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -79,7 +83,7 @@
                 </button>
                 <h3 class="text-center text-danger">
                     <strong>There is no branch upto now please add branch to the system
-                        using "New" button.
+                            using "New" button.
                     </strong>
                 </h3>
             </div>
@@ -91,13 +95,13 @@
         </script>
     </div>
     <!--Save Message-->
-    <div class="row" th:if="${branchDetail != null}">
+    <div class="row" data-th-if="${branchDetail != null}">
         <div class="col-sm-12">
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <div th:replace="~{branch/branch-detail :: branchDetailsFragment}"></div>
+                <div data-th-replace="~{branch/branch-detail :: branchDetailsFragment}"></div>
             </div>
         </div>
         <script>
@@ -108,9 +112,9 @@
     </div>
 </div>
 <!--footer include-->
-<footer th:replace="~{fragments/footer :: footerFragment}"></footer>
+<footer data-th-replace="~{fragments/footer :: footerFragment}"></footer>
 <!--script include-->
-<script th:replace="~{fragments/script :: scriptFragment}"></script>
+<script data-th-replace="~{fragments/script :: scriptFragment}"></script>
 
 </body>
 </html>
