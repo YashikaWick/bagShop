@@ -1,18 +1,16 @@
 package sanchana.bagShop.asset.employee.entity.Enum;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
 public enum Designation {
-
-    OWNER("Owner"),
-    CASHIER("Cashier"),
-    ACCOUNTANT("Accountant"),
-    SK("Stock Keeper)");
+    SQA("Senior Quality Assurance Manager"),
+    QA("Quality Assurance Manager"),
+    TA("Technical Manager"),
+    LA("Lab Assistance"),
+    CA("Cashier");
 
     private final String designation;
 }
-

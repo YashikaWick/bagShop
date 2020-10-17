@@ -8,29 +8,30 @@
 <nav data-th-replace="~{fragments/navBar :: navBarFragment}"></nav>
 
 <!--heading Area-->
-<div class="container-fluid bg-secondary form-Border">
+<div class="container-fluid  form-Border">
     <div class="row text-center formManagement border-info">
         <div class="col">
-            <a class="btn btn-primary" href="/home">
-                <i class="fa fa-home" style="font-size: 20px"></i> &nbsp; Home
+            <a class="btn btn-outline-info" href="/home">&nbsp; Back To Home
             </a>
         </div>
+
         <div class="col">
-            <h4 class="text-light text-center">
+            <a href="/employee" class="btn btn-primary">View Employees
+            </a>
+        </div>
+    </div>
+    <div>
+        <div class="col">
+            <h4 class="text-info text-center">
                 <strong>
                     <p data-th-text="${employeeDetail.title.title} +${' '} +${employeeDetail.name}"></p>
                 </strong>
             </h4>
         </div>
-        <div class="col">
-            <a href="/employee" class="btn btn-primary">
-                <i class="fa fa-list"></i>&nbsp; View List
-            </a>
-        </div>
     </div>
 </div>
 <!--details-->
-<div data-th-fragment="employeeDetailsFragment" class="container-fluid ">
+<div data-th-fragment="employeeDetailsFragment" class="container-fluid  formBorder">
     <div class="col-sm-12 flex-column ">
         <div class="row">
             <!--Left Side-->
@@ -45,19 +46,20 @@
                 </div>
                 <div class="form-row text-right">
                     <div class="col-md-4">
-                        <label class="control-label" for="payRoleNumber">Pay Role No :</label>
+                        <label class="control-label" for="employeeCode">Employee Id :</label>
                     </div>
                     <div class="col-md-8">
-                        <p id="payRoleNumber" data-th-text="${employeeDetail.payRoleNumber}" class="display_detail"></p>
+                        <p id="employeeCode" data-th-text="${employeeDetail.code}" class="display_detail"></p>
                     </div>
                 </div>
-                <div class="form-row text-right">
+               <!-- <div class="form-row text-right">
                     <div class="col-md-4">
                         <label class="control-label" for="departmentIdNumber">Depart Id No :</label>
                     </div>
                     <div class="col-md-8">
-                        <p id="departmentIdNumber" data-th-text="${employeeDetail.departmentIdNumber}" class="display_detail"></p></div>
-                </div>
+                        <p id="departmentIdNumber" data-th-text="${employeeDetail.departmentIdNumber}" class="display_detail"></p>
+                    </div>
+                </div>-->
                 <div class="form-row text-right">
                     <div class="col-md-4">
                         <label class="control-label" for="name">Name :</label>
@@ -98,7 +100,7 @@
                         <p id="dateOfBirth" data-th-text="${employeeDetail.dateOfBirth}" class="display_detail">Error Birthday</p>
                     </div>
                 </div>
-                <div class="form-row text-right">
+                <!--<div class="form-row text-right">
                     <div class="col-md-4">
                         <label class="control-label" for="bloodGroup">Blood Group :</label>
                     </div>
@@ -106,7 +108,7 @@
                         <p id="bloodGroup" data-th-text="${employeeDetail.bloodGroup.bloodGroup}" class="display_detail">
                         </p>
                     </div>
-                </div>
+                </div>-->
                 <div class="form-row text-right">
                     <div class="col-md-4">
                         <label class="control-label" for="designation">Designation :</label>
@@ -167,14 +169,14 @@
                         <p id="land" data-th-text="${employeeDetail.land}" class="display_detail"></p>
                     </div>
                 </div>
-                <div class="form-row text-right">
+                <!--<div class="form-row text-right">
                     <div class="col-md-4">
                         <label class="control-label" for="email">Email :</label>
                     </div>
                     <div class="col-md-8">
                         <p id="email" data-th-text="${employeeDetail.email}" class="display_detail"></p>
                     </div>
-                </div>
+                </div>-->
                 <div class="form-row text-right">
                     <div class="col-md-4">
                         <label class="control-label" for="officeEmail">Office Email :</label>
@@ -225,7 +227,7 @@
                 </div>
             </div>
             <!--Current Working Place Details-->
-            <!--<div class="container-fluid ">
+            <!--<div class="container-fluid bg-dark formBorder">
                 <h3 class="control-label">Current Working Place Details</h3>
                 <div class="col-sm-12 flex-column">
                     <div class="row">
@@ -291,9 +293,9 @@
                                     <p id="employeeWorkingPlaceAddress" class="display_detail" data-th-utext="${employeeDetail.workingPlace.address}"></p>
                                 </div>
                             </div>
-                        </div>-->
-                        <!--Right Side-->
-                        <div class="form-group col-md-6 col-sm-6 text-right flex-column">
+                        </div>
+                        &lt;!&ndash;Right Side&ndash;&gt;
+                      &lt;!&ndash;  <div class="form-group col-md-6 col-sm-6 text-right flex-column">
                             <div class="form-row text-right">
                                 <div class="col-md-4">
                                     <label class="control-label" for="employeeWorkingPlaceLandOne">Land No One:</label>
@@ -354,11 +356,11 @@
                                     <p id="employeeWorkingPlaceCreatedAt" class="display_detail" data-th-text="${#temporals.format(employeeDetail.workingPlace.createdAt, 'dd-MM-yyyy HH:mm')}"></p>
                                 </div>
                             </div>
-                        </div>
+                        </div>&ndash;&gt;
                     </div>
                 </div>
-            </div>
-            <!--img-->
+            </div>-->
+            <!--images-->
             <div class="form-group col-md-12 col-sm-12 text-left flex-column ">
                 <div class="col" id="photoDetails">
                     <div>
@@ -371,8 +373,8 @@
                                     <div class="card text-center">
                                         <div class="card-body">
                                             <img id="img" class="rounded"
-                                                 style="height: 150px; width: 150px; border-radius: 10px"
-                                                 alt="Employee img" data-th-src="${file.url}"/>
+                                                 style="height: 150px; widdata-th- 150px; border-radius: 10px"
+                                                 alt="Employee images" data-th-src="${file.url}"/>
                                         </div>
                                         <div class="card-footer bg-secondary text-light text-center">
                                             <p id="imgName" data-th-text="${file.filename}"></p>
@@ -389,7 +391,7 @@
             </div>
         </div>
         <!--Working Place History Details show-->
-        <div class="container-fluid text-center " data-th-if="${not #lists.isEmpty(employeeDetail.employeeWorkingHistories)}" id="workingPlaceHistoryDetails">
+        <div class="container-fluid text-center bg-dark formBorder" data-th-if="${not #lists.isEmpty(employeeDetail.employeeWorkingHistories)}" id="workingPlaceHistoryDetails">
             <div class="col-sm-12 flex-column ">
                 <div class="header ">
                     <h3><strong><span id="captionEmployeeName" data-th-text="${employeeDetail.title.title} +${' '} +${employeeDetail.name}"></span>'s Working History</strong></h3>

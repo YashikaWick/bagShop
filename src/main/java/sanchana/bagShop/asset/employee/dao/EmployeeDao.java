@@ -1,9 +1,9 @@
 package sanchana.bagShop.asset.employee.dao;
 
-
-import sanchana.bagShop.asset.employee.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import sanchana.bagShop.asset.employee.entity.Employee;
+
 
 @Repository
 public interface EmployeeDao extends JpaRepository< Employee, Integer> {
@@ -11,4 +11,3 @@ public interface EmployeeDao extends JpaRepository< Employee, Integer> {
 
     Employee findByNic(String nic);
 }
-

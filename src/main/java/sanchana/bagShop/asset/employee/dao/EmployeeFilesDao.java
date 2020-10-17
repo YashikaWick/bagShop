@@ -1,11 +1,10 @@
 package sanchana.bagShop.asset.employee.dao;
 
 
-
-import sanchana.bagShop.asset.employee.entity.Employee;
-import sanchana.bagShop.asset.employee.entity.EmployeeFiles;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import sanchana.bagShop.asset.employee.entity.Employee;
+import sanchana.bagShop.asset.employee.entity.EmployeeFiles;
 
 import java.util.List;
 
@@ -18,4 +17,6 @@ public interface EmployeeFilesDao extends JpaRepository< EmployeeFiles, Integer 
     EmployeeFiles findByNewName(String filename);
 
     EmployeeFiles findByNewId(String filename);
+
+    EmployeeFiles findByEmployee(Employee employee);
 }
