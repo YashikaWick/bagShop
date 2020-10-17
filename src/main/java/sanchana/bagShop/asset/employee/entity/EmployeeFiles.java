@@ -1,11 +1,11 @@
 package sanchana.bagShop.asset.employee.entity;
 
 
-import sanchana.bagShop.util.audit.AuditEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import sanchana.bagShop.util.audit.AuditEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

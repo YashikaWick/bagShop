@@ -28,7 +28,6 @@ import java.util.List;
 public class User extends AuditEntity {
 
     @OneToOne
-    @NotEmpty
     private Employee employee;
 
     @Column(nullable = false,unique = true)
