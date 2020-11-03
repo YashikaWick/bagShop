@@ -33,6 +33,9 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
         User authUser = userService.findByUserName(SecurityContextHolder.getContext().getAuthentication().getName());
 //if user already have failure attempt clean before a save new session log
 
+
+        System.out.println(" I am here buddy");
+
         //the user successfully logs in.
         UserSessionLog userSessionLog = new UserSessionLog();
         userSessionLog.setUser(authUser);
