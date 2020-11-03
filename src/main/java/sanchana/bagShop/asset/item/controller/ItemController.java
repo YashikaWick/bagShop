@@ -3,6 +3,7 @@ package sanchana.bagShop.asset.item.controller;
 
 
 import sanchana.bagShop.asset.category.controller.CategoryController;
+import sanchana.bagShop.asset.category.controller.CategoryRestController;
 import sanchana.bagShop.asset.item.entity.Enum.ItemStatus;
 import sanchana.bagShop.asset.item.entity.Enum.MainCategory;
 import sanchana.bagShop.asset.item.entity.Item;
@@ -33,10 +34,11 @@ public class ItemController implements AbstractController< Item, Integer > {
         model.addAttribute("addStatus", addState);
         model.addAttribute("mainCategories", MainCategory.values());
         model.addAttribute("urlMainCategory", MvcUriComponentsBuilder
-                .fromMethodName(CategoryController.class, "getCategoryByMainCategory", "")
+                .fromMethodName(CategoryRestController.class, "getCategoryByMainCategory", "")
                 .build()
                 .toString());
         return "item/addItem";
+
     }
 
     @GetMapping
