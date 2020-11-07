@@ -33,6 +33,7 @@ public class Supplier extends AuditEntity {
     @Size( max = 10, min = 9, message = "Mobile number length should be contained 10 and 9" )
     private String contactOne;
 
+    @Size( max = 10, min = 9, message = "Mobile number length should be contained 10 and 9" )
     private String contactTwo;
 
     @Column( unique = true )
