@@ -59,17 +59,7 @@
                                   data-th-if="${#fields.hasErrors('name')}" class="error">Error Name</span>
                         </div>
                     </div>
-                    <!--BRN-->
-                    <div class="form-row text-right">
-                        <div class="col-md-4">
-                            <label class="control-label" for="brn">BRN :</label>
-                        </div>
-                        <div class="col-md-8">
-                            <input id="brn" data-th-field="*{brn}" class="form-control" tabindex="4" type="text" required/>
-                            <span id="brnError" data-th-errors="*{brn}"
-                                  data-th-if="${#fields.hasErrors('brn')}" class="error">Error Name</span>
-                        </div>
-                    </div>
+
                     <!--Contact Number One-->
                     <div class="form-row text-right">
                         <div class="col-md-4">
@@ -84,7 +74,7 @@
                     <!--Contact Number Two-->
                     <div class="form-row text-right">
                         <div class="col-md-4">
-                            <label class="control-label" for="contactTwo">Contact No2 :</label>
+                            <label class="control-label" for="contactTwo">Contact No2 :</label> <h3>(Optional)</h3>
                         </div>
                         <div class="col-md-8">
                             <input id="contactTwo" data-th-field="*{contactTwo}" class="form-control mobile" tabindex="6" type="text" maxlength="10" min="9"/>
