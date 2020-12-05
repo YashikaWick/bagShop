@@ -25,7 +25,7 @@ public class UiController {
         return "index";
     }
 
-    @GetMapping(value = {"/home", "/mainWindow"})
+    @GetMapping(value = {"/home", "/mainwindow"})
     public String getHome(Model model) {
         //do some logic here if you want something to be done whenever
         /*User authUser = userService.findByUserName(SecurityContextHolder.getContext().getAuthentication().getName());

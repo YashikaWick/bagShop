@@ -4,215 +4,388 @@
     <meta charset="UTF-8">
     <title>Thymeleaf Springboot </title>
 </head>
-<body>
-<nav th:replace="~{fragments/navBar :: navBarFragment}"></nav>
 
-<div class="container-fluid">
-    <div class="main-section">
-        <p class="welcome-Notes">Welcome To Complaint Management System of Department of
-                                 Excise</p>
-        <div class="col-12">
-            <div class="row">
-                <div class="col-7">
-                    <div class="form-row">
-                        <!--Employee-->
-                        <div class="col-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="tile wide invoice">
-                                        <div class="header">
-                                            <div class="count">
-                                                <i class="fas fa-user-tie" style="font-size: 20px" aria-hidden="true"></i>
-                                            </div>
-                                            <div class="title">Employee</div>
-                                        </div>
-                                        <a href="/employee">
-                                            <div class="body">
-                                                <div class="title">Manage Employees</div>
-                                            </div>
-                                        </a>
-                                        <a href="/branch">
-                                            <div class="body">
-                                                <div class="title">Manage Branches</div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Customer-->
-                        <div class="col-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="tile wide resource">
-                                        <div class="header">
-                                            <div class="">
-                                                <div class="count"><i class="far fa-handshake" style="font-size: 20px" aria-hidden="true"></i>
-                                                </div>
-                                                <div class="title">Customer</div>
-                                            </div>
-                                        </div>
-                                        <a href="/customer">
-                                            <div class="body">
-                                                <div class="title">Manage Customers</div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Supplier-->
-                        <div class="col-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="tile wide quote">
-                                        <div class="header">
-                                            <div class="">
-                                                <div class="count"><i class="fas fa-truck" style="font-size: 20px" aria-hidden="true"></i>
-                                                </div>
-                                                <div class="title">Supplier</div>
-                                            </div>
-                                        </div>
-                                        <a href="/supplier">
-                                            <div class="body">
-                                                <div class="title">Manage Suppliers</div>
-                                            </div>
-                                        </a>
-                                        <a href="/supplierItem">
-                                            <div class="body">
-                                                <div class="title">Manage Supplier Items</div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <!--Item-->
-                        <div class="col-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="tile wide resource">
-                                        <div class="header">
-                                            <div class="">
-                                                <div class="count"><i class="fa fa-shopping-cart" style="font-size: 20px" aria-hidden="true"></i>
+<!--<nav th:replace="~{fragments/navBar :: navBarFragment}"></nav>-->
 
-                                                </div>
-                                                <div class="title">Item</div>
+<body class="animsition">
+<div class="page-wrapper">
+
+    <!-- MENU SIDEBAR-->
+    <aside class="menu-sidebar d-none d-lg-block">
+        <div class="logo">
+            <a href="#">
+                <img data-th-src="${'img/1.PNG'}" class="image" alt="Sanchana" />
+            </a>
+        </div>
+        <div class="menu-sidebar__content js-scrollbar1">
+            <nav class="navbar-sidebar">
+                <ul class="list-unstyled navbar__list">
+                    <li>
+                        <a href="my.html">
+                            <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                    </li>
+
+                    <li>
+                        <a href="chart.html">
+                            <i class="fas fa-user"></i>Employee</a>
+                    </li>
+                    <li>
+                        <a href="table.html">
+                            <i class="fas fa-shopping-bag"></i>Item</a>
+                    </li>
+                    <li>
+                        <a href="form.html">
+                            <i class="fa fa-truck"></i>Supplier</a>
+                    </li>
+                    <li>
+                        <a href="calendar.html">
+                            <i class="fas fa-shopping-cart	"></i>Purchase</a>
+                    </li>
+                    <li>
+                        <a href="map.html">
+                            <i class="fas fa-dollar-sign"></i>Payment</a>
+                    </li>
+
+                    <li>
+                        <a href="map.html">
+                            <i class="fa fa-file"></i>Invoice</a>
+                    </li>
+
+                    <li>
+                        <a href="map.html">
+                            <i class="fas fa-chart-pie"></i></i>Report</a>
+                    </li>
+
+
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <!-- END MENU SIDEBAR-->
+
+    <!-- PAGE CONTAINER-->
+    <div class="page-container">
+        <!-- HEADER DESKTOP-->
+        <header class="header-desktop">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                    <div class="header-wrap">
+                        <form class="form-header" action="" method="POST">
+                            <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                            <button class="au-btn--submit" type="submit">
+                                <i class="zmdi zmdi-search"></i>
+                            </button>
+                        </form>
+                        <div class="header-button">
+                            <div class="noti-wrap">
+                                <div class="noti__item js-item-menu">
+                                    <i class="zmdi zmdi-comment-more"></i>
+                                    <span class="quantity">1</span>
+                                    <div class="mess-dropdown js-dropdown">
+                                        <div class="mess__title">
+                                            <p>You have 2 news message</p>
+                                        </div>
+                                        <div class="mess__item">
+                                            <div class="image img-cir img-40">
+                                                <img data-th-src="${'img/icon/avatar-06.jpg'}" alt="Michelle Moreno" />
+                                            </div>
+                                            <div class="content">
+                                                <h6>Michelle Moreno</h6>
+                                                <p>Have sent a photo</p>
+                                                <span class="time">3 min ago</span>
                                             </div>
                                         </div>
-                                        <a class href="/item">
-                                            <div class="body">
-                                                <div class="title">Manage Items</div>
+                                        <div class="mess__item">
+                                            <div class="image img-cir img-40">
+                                                <img data-th-src="${'img/icon/avatar-04.jpg'}" alt="Diane Myers" />
                                             </div>
-                                        </a>
-                                        <a class href="/category">
-                                            <div class="body">
-                                                <div class="title">Manage Categories</div>
+                                            <div class="content">
+                                                <h6>Diane Myers</h6>
+                                                <p>You are now connected on message</p>
+                                                <span class="time">Yesterday</span>
                                             </div>
-                                        </a>
+                                        </div>
+                                        <div class="mess__footer">
+                                            <a href="#">View all messages</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="noti__item js-item-menu">
+                                    <i class="zmdi zmdi-email"></i>
+                                    <span class="quantity">1</span>
+                                    <div class="email-dropdown js-dropdown">
+                                        <div class="email__title">
+                                            <p>You have 3 New Emails</p>
+                                        </div>
+                                        <div class="email__item">
+                                            <div class="image img-cir img-40">
+                                                <img data-th-src="${'img/icon/avatar-06.jpg'}" alt="Cynthia Harvey" />
+                                            </div>
+                                            <div class="content">
+                                                <p>Meeting about new dashboard...</p>
+                                                <span>Cynthia Harvey, 3 min ago</span>
+                                            </div>
+                                        </div>
+                                        <div class="email__item">
+                                            <div class="image img-cir img-40">
+                                                <img data-th-src="${'img/icon/avatar-05.jpg'}" alt="Cynthia Harvey" />
+                                            </div>
+                                            <div class="content">
+                                                <p>Meeting about new dashboard...</p>
+                                                <span>Cynthia Harvey, Yesterday</span>
+                                            </div>
+                                        </div>
+                                        <div class="email__item">
+                                            <div class="image img-cir img-40">
+                                                <img data-th-src="${'img/icon/avatar-04.jpg'}" alt="Cynthia Harvey" />
+                                            </div>
+                                            <div class="content">
+                                                <p>Meeting about new dashboard...</p>
+                                                <span>Cynthia Harvey, April 12,,2018</span>
+                                            </div>
+                                        </div>
+                                        <div class="email__footer">
+                                            <a href="#">See all emails</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="noti__item js-item-menu">
+                                    <i class="zmdi zmdi-notifications"></i>
+                                    <span class="quantity">3</span>
+                                    <div class="notifi-dropdown js-dropdown">
+                                        <div class="notifi__title">
+                                            <p>You have 3 Notifications</p>
+                                        </div>
+                                        <div class="notifi__item">
+                                            <div class="bg-c1 img-cir img-40">
+                                                <i class="zmdi zmdi-email-open"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>You got a email notification</p>
+                                                <span class="date">April 12, 2018 06:50</span>
+                                            </div>
+                                        </div>
+                                        <div class="notifi__item">
+                                            <div class="bg-c2 img-cir img-40">
+                                                <i class="zmdi zmdi-account-box"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Your account has been blocked</p>
+                                                <span class="date">April 12, 2018 06:50</span>
+                                            </div>
+                                        </div>
+                                        <div class="notifi__item">
+                                            <div class="bg-c3 img-cir img-40">
+                                                <i class="zmdi zmdi-file-text"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>You got a new file</p>
+                                                <span class="date">April 12, 2018 06:50</span>
+                                            </div>
+                                        </div>
+                                        <div class="notifi__footer">
+                                            <a href="#">All notifications</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!--Purchase-->
-                        <div class="col-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="tile wide quote">
-                                        <div class="header">
-                                            <div class="">
-                                                <div class="count"><i class="fas fa-truck-loading" style="font-size: 20px" aria-hidden="true"></i>
-                                                </div>
-                                                <div class="title">Purchase</div>
-                                            </div>
-
-                                        </div>
-                                        <a href="/workingPlace">
-                                            <div class="body">
-                                                <div class="title">Manage Supplier Orders</div>
-                                            </div>
-                                        </a>
+                            <div class="account-wrap">
+                                <div class="account-item clearfix js-item-menu">
+                                    <div class="image">
+                                        <i class="fas fa-user"></i></a>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Invoice-->
-                        <div class="col-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="tile wide invoice">
-                                        <div class="header">
-                                            <div class="">
-                                                <div class="count"><i class="fas fa-file-invoice-dollar" style="font-size: 20px" aria-hidden="true"></i>
-                                                </div>
-                                                <div class="title">Invoice</div>
-                                            </div>
+                                    <div class="content">
+                                        <a class="js-acc-btn" href="#"></a>
+                                    </div>
+                                    <div class="account-dropdown js-dropdown">
 
-                                        </div>
-                                        <a href="/workingPlace">
-                                            <div class="body">
-                                                <div class="title">Manage Customer orders</div>
+                                        <div class="account-dropdown__body">
+
+
+                                            <div class="account-dropdown__footer">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-power"></i>Logout</a>
                                             </div>
-                                        </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--To day petition list-->
-                <div class="col-5 ">
-                    <p class="welcome-Notes">To Day Petitions</p>
-                    <!--Petition Lists -->
-                    <div class="container-fluid text-center" id="petitionListPresent">
-                        <table class="table table-hover table-striped" id="myTable">
-                            <thead>
-                            <tr>
-                                <th> Petition Number</th>
-                                <th> Petition Priority</th>
-                                <th> Working Place</th>
-                                <th> State</th>
-                                <th> Modify</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr id="petitionList">
-                                <th id="petitionNumber"></th>
-                                <th id="petitionPriority"></th>
-                                <th id="workingPlace"></th>
-                                <th id="petitionState"></th>
-                                <th>
-                                    <a id="petitionView" class="btn btn-success btn-sm"><i
-                                            class="fa fa-folder-open"></i>&nbsp;View</a>
-                                </th>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="row" id="petitionListNotPresent">
-                        <div class="col-sm-12">
-                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                <h3 class="text-center text-danger">
-                                    <strong>There is no petition upto know please add petition to the system
-                                            using add user button.
-                                    </strong>
-                                </h3>
+        </header>
+        <!-- HEADER DESKTOP-->
+
+        <!-- MAIN CONTENT-->
+        <div class="main-content">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="overview-wrap">
+                                <h2 class="title-1">overview</h2>
+                                <button class="au-btn au-btn-icon au-btn--blue">
+                                    <i class="zmdi zmdi-plus"></i>add item</button>
                             </div>
                         </div>
-                        <script>
-                            $(".alert").alert();
-                        </script>
+                    </div>
+                    <div class="row m-t-25">
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="overview-item overview-item--c1">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="icon">
+                                            <i class="zmdi zmdi-account-o"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h2>10368</h2>
+                                            <span>members online</span>
+                                        </div>
+                                    </div>
+                                    <div class="overview-chart">
+                                        <canvas id="widgetChart1"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="overview-item overview-item--c2">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="icon">
+                                            <i class="zmdi zmdi-shopping-cart"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h2>388,688</h2>
+                                            <span>items solid</span>
+                                        </div>
+                                    </div>
+                                    <div class="overview-chart">
+                                        <canvas id="widgetChart2"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="overview-item overview-item--c3">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="icon">
+                                            <i class="zmdi zmdi-calendar-note"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h2>1,086</h2>
+                                            <span>this week</span>
+                                        </div>
+                                    </div>
+                                    <div class="overview-chart">
+                                        <canvas id="widgetChart3"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="overview-item overview-item--c4">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="icon">
+                                            <i class="zmdi zmdi-money"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h2>$1,060,386</h2>
+                                            <span>total earnings</span>
+                                        </div>
+                                    </div>
+                                    <div class="overview-chart">
+                                        <canvas id="widgetChart4"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="au-card recent-report">
+                                <div class="au-card-inner">
+                                    <h3 class="title-2">recent reports</h3>
+                                    <div class="chart-info">
+                                        <div class="chart-info__left">
+                                            <div class="chart-note">
+                                                <span class="dot dot--blue"></span>
+                                                <span>products</span>
+                                            </div>
+                                            <div class="chart-note mr-0">
+                                                <span class="dot dot--green"></span>
+                                                <span>services</span>
+                                            </div>
+                                        </div>
+                                        <div class="chart-info__right">
+                                            <div class="chart-statis">
+                                                    <span class="index incre">
+                                                        <i class="zmdi zmdi-long-arrow-up"></i>25%</span>
+                                                <span class="label">products</span>
+                                            </div>
+                                            <div class="chart-statis mr-0">
+                                                    <span class="index decre">
+                                                        <i class="zmdi zmdi-long-arrow-down"></i>10%</span>
+                                                <span class="label">services</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="recent-report__chart">
+                                        <canvas id="recent-rep-chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="au-card chart-percent-card">
+                                <div class="au-card-inner">
+                                    <h3 class="title-2 tm-b-5">char by %</h3>
+                                    <div class="row no-gutters">
+                                        <div class="col-xl-6">
+                                            <div class="chart-note-wrap">
+                                                <div class="chart-note mr-0 d-block">
+                                                    <span class="dot dot--blue"></span>
+                                                    <span>products</span>
+                                                </div>
+                                                <div class="chart-note mr-0 d-block">
+                                                    <span class="dot dot--red"></span>
+                                                    <span>services</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <div class="percent-chart">
+                                                <canvas id="percent-chart"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copyright">
+                                <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- END MAIN CONTENT-->
+        <!-- END PAGE CONTAINER-->
     </div>
+
 </div>
+
+
+
+
 
 <!--footer include-->
 <footer th:replace="~{fragments/footer :: footerFragment}"></footer>
