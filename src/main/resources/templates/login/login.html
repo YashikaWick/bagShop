@@ -5,10 +5,15 @@
     <title>Thymeleaf Springboot </title>
 </head>
 <body id="loginBack">
+<!--Login-->
+<link th:href="@{/css/login.css}" media="all" rel="stylesheet" type="text/css"/>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-   Sign Up Here
-</button>
+<div class="container">
+    <img data-th-src="${'img/CiXTiiB.jpg'}" class="image" alt="Sanchana" />
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Sign Up Here
+    </button>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

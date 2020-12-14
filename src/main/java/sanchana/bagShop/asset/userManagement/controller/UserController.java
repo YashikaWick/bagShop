@@ -2,8 +2,8 @@ package sanchana.bagShop.asset.userManagement.controller;
 
 
 import sanchana.bagShop.asset.employee.entity.Employee;
-import sanchana.bagShop.asset.employee.entity.Enum.Designation;
-import sanchana.bagShop.asset.employee.entity.Enum.EmployeeStatus;
+import sanchana.bagShop.asset.employee.entity.enums.Designation;
+import sanchana.bagShop.asset.employee.entity.enums.EmployeeStatus;
 import sanchana.bagShop.asset.employee.service.EmployeeService;
 import sanchana.bagShop.asset.userManagement.entity.User;
 import sanchana.bagShop.asset.userManagement.service.RoleService;

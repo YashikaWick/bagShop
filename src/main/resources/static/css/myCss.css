@@ -7,9 +7,21 @@
     --error-color: #fa370d;
 }
 
-#loginBack {
-    background-image: url('../img/CiXTiiB.jpg');
+h4 strong{
+    padding: 20px;
+    font-family: Georgia;
+    font-size: 30px;
+    color: #2c3e50;
 }
+
+/*body{*/
+/*    color: #9e9e9e;*/
+/*}*/
+/*div{*/
+/*    border-style: dotted;*/
+/*}*/
+
+
 
 
 /*html Background - start*/
@@ -51,16 +63,34 @@
     padding-bottom: 5px;
 }
 
-.btn {
-    box-shadow: 1px 2px 5px #000000;
-}
+/*.btn {*/
+
+/*    height:200px;*/
+/*    width:100px;*/
+/*    padding: 30px 20px;*/
+
+/*    !*line-height: 45px;*!*/
+/*    !*width: 50px;*!*/
+/*    !*padding: 0 35px;*!*/
+/*    !*text-transform: uppercase;*!*/
+/*    !*color: #fff;*!*/
+/*    !*-webkit-border-radius: 3px;*!*/
+/*    !*-moz-border-radius: 3px;*!*/
+/*    !*border-radius: 3px;*!*/
+/*    !*-webkit-transition: all 0.3s ease;*!*/
+/*    !*-o-transition: all 0.3s ease;*!*/
+/*    !*-moz-transition: all 0.3s ease;*!*/
+/*    !*transition: all 0.3s ease;*!*/
+/*    !*cursor: pointer;*!*/
+/*    !*box-shadow: 1px 2px 5px #000000;*!*/
+
 
 /* for login form - start*/
-#loginPage {
-    margin-top: 315px;
-    color: white;
+/*#loginPage {*/
+/*    margin-top: 315px;*/
+/*    color: white;*/
 
-}
+/*}*/
 
 /* for login form - end*/
 /* for summary form - start*/
@@ -206,64 +236,69 @@
 
 /*Error Message Colour - star*/
 /*main window notification div style- start*/
-.mainWindSumReport {
-    color: #f7f7f7;
-    align-content: center;
-    background: #49e6fd;
-    background: -webkit-radial-gradient(#6b67ff, #3b9ffd, #29A1D5);
-    background: -o-radial-gradient(#6b67ff, #3b9ffd, #29A1D5);
-    background: -moz-radial-gradient(#6b67ff, #3b9ffd, #29A1D5);
-    background: radial-gradient(#6b67ff, #3b9ffd, #29A1D5);
-    border: 1px solid #f7f7f7;
-    border-radius: 25px 10px 25px 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+/*.mainWindSumReport {*/
+/*    color: #f7f7f7;*/
+/*    align-content: center;*/
+/*    background: #49e6fd;*/
+/*    background: -webkit-radial-gradient(#6b67ff, #3b9ffd, #29A1D5);*/
+/*    background: -o-radial-gradient(#6b67ff, #3b9ffd, #29A1D5);*/
+/*    background: -moz-radial-gradient(#6b67ff, #3b9ffd, #29A1D5);*/
+/*    background: radial-gradient(#6b67ff, #3b9ffd, #29A1D5);*/
+/*    border: 1px solid #f7f7f7;*/
+/*    border-radius: 25px 10px 25px 10px;*/
+/*    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+/*}*/
 
-/*main window notification div style- end*/
-/*all button same size according to boostrap btn-sm  - start*/
-button .btn {
-    padding: 5px 10px !important;
-    font-size: 12px !important;
-    line-height: 1.5 !important;
-    border-radius: 50px !important;
-}
+/*!*main window notification div style- end*!*/
+/*!*all button same size according to boostrap btn-sm  - start*!*/
+/*!*.button .btn {*!*/
+/*!*    height:200px;*!*/
+/*!*    width:200px;*!*/
+/*!*    padding: 100px 1000px !important;*!*/
+/*!*    font-size: 12px !important;*!*/
+/*!*    line-height: 1.5 !important;*!*/
+/*!*    border-radius: 50px !important;*!*/
+/*!*    alignment: left;*!*/
+/*!*}*!*/
 
-/*all button same size according to boostrap btn-sm  - end*/
+/*!*all button same size according to boostrap btn-sm  - end*!*/
 
-/*remove lab test from selected table - start*/
-.removeLabTest {
-    color: #f0ad4e;
-    font-weight: lighter;
-}
+/*!*remove lab test from selected table - start*!*/
+/*.removeLabTest {*/
+/*    color: #f0ad4e;*/
+/*    font-weight: lighter;*/
+/*}*/
 
-.addLabTest {
-    color: #000000;
-    background-color: #00FFFF;
-}
+/*.addLabTest {*/
+/*    color: #000000;*/
+/*    background-color: #00FFFF;*/
+/*}*/
 
-/*remove lab test from selected table - end*/
+/*!*remove lab test from selected table - end*!*/
 
-/*form  - start*/
-label {
-   font-size: 18px !important;
-    font-max-size: 22px;
-    font-min-size: 12px;
-    font-weight: bold;
-    color: white;
-}
+/*!*form  - start*!*/
+/*label {*/
+/*   font-size: 18px !important;*/
+/*    font-max-size: 22px;*/
+/*    font-min-size: 12px;*/
+/*    font-weight: bold;*/
+/*    color: black;*/
+/*}*/
 
-input {
-    font-size: 18px !important;
-}
+/*input {*/
+/*    font-size: 18px !important;*/
+/*}*/
 
-.display_detail {
-    font-size: 18px !important;
-    font-max-size: 20px;
-    font-min-size: 12px;
-    font-weight: bold;
-    color: black;
-    text-align: left;
-}
+/*.display_detail {*/
+/*    font-size: 18px !important;*/
+/*    font-max-size: 20px;*/
+/*    font-min-size: 12px;*/
+/*    font-weight: bold;*/
+/*    color: black;*/
+/*    text-align: left;*/
+/*}*/
+
+
 
 .form-row {
     padding: 10px;
@@ -271,69 +306,14 @@ input {
 }
 
 .formManagement {
-    padding: 10px;
+    padding: 30px;
     border-radius: 15px;
     margin-bottom: 2px;
 }
 
-.formBorder {
-    border-radius: 15px;
-    background: linear-gradient(215deg, #5ca155, #a080c5, #56a4b6, #04c2ec, #f2e053);
-    background-size: 1000% 1000%;
 
-    -webkit-animation: AnimationName 31s ease infinite;
-    -moz-animation: AnimationName 31s ease infinite;
-    -o-animation: AnimationName 31s ease infinite;
-    animation: AnimationName 31s ease infinite;
-}
 
-@-webkit-keyframes AnimationName {
-    0% {
-        background-position: 88% 0%
-    }
-    50% {
-        background-position: 13% 100%
-    }
-    100% {
-        background-position: 88% 0%
-    }
-}
 
-@-moz-keyframes AnimationName {
-    0% {
-        background-position: 88% 0%
-    }
-    50% {
-        background-position: 13% 100%
-    }
-    100% {
-        background-position: 88% 0%
-    }
-}
-
-@-o-keyframes AnimationName {
-    0% {
-        background-position: 88% 0%
-    }
-    50% {
-        background-position: 13% 100%
-    }
-    100% {
-        background-position: 88% 0%
-    }
-}
-
-@keyframes AnimationName {
-    0% {
-        background-position: 88% 0%
-    }
-    50% {
-        background-position: 13% 100%
-    }
-    100% {
-        background-position: 88% 0%
-    }
-}
 
 .form-Border {
     border-radius: 15px;

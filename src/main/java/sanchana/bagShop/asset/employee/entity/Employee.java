@@ -1,25 +1,25 @@
 package sanchana.bagShop.asset.employee.entity;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.multipart.MultipartFile;
-import sanchana.bagShop.asset.branch.entity.Branch;
 import sanchana.bagShop.asset.commonAsset.model.Enum.CivilStatus;
 import sanchana.bagShop.asset.commonAsset.model.Enum.Gender;
+import sanchana.bagShop.asset.commonAsset.model.Enum.LiveOrDead;
 import sanchana.bagShop.asset.commonAsset.model.Enum.Title;
 import sanchana.bagShop.asset.commonAsset.model.FileInfo;
-import sanchana.bagShop.asset.employee.entity.Enum.Designation;
-import sanchana.bagShop.asset.employee.entity.Enum.EmployeeStatus;
+import sanchana.bagShop.asset.employee.entity.enums.Designation;
+import sanchana.bagShop.asset.employee.entity.enums.EmployeeStatus;
 import sanchana.bagShop.util.audit.AuditEntity;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Getter
@@ -72,19 +72,17 @@ public class Employee extends AuditEntity {
     @Enumerated( EnumType.STRING )
     private EmployeeStatus employeeStatus;
 
+    @Enumerated(EnumType.STRING)
+    private LiveOrDead liveOrDead;
+
     @DateTimeFormat( pattern = "yyyy-MM-dd" )
     private LocalDate dateOfBirth;
 
     @DateTimeFormat( pattern = "yyyy-MM-dd" )
     private LocalDate dateOfAssignment;
 
-    @ManyToOne
-    private Branch branch;
-
-
     @Transient
     private MultipartFile file;
-
 
     @Transient
     private FileInfo fileInfo;

@@ -1,6 +1,7 @@
 package sanchana.bagShop.asset.employee.service;
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
@@ -64,5 +65,9 @@ public class EmployeeFilesService {
             return new FileInfo(filename, employeeFiles.getCreatedAt(), url);
         }
         return null;
+    }
+
+    public EmployeeFiles findByEmployee(Employee employee) {
+        return employeeFilesDao.findByEmployee(employee);
     }
 }

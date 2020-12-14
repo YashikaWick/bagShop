@@ -5,18 +5,21 @@
     <title>Thymeleaf Springboot </title>
 </head>
 <body>
-<nav th:replace="~{fragments/navBar :: navBarFragment}"></nav>
+<!--<nav th:replace="~{fragments/navBar :: navBarFragment}"></nav>-->
+<div th:replace="~{fragments/navBar :: navBarFragment}"></div>
+
+
 
 <!--heading Area-->
 <div class="container-fluid  form-Border">
-    <div class="row text-center formManagement border-info">
+    <div class="row mt-4">
         <div class="col">
-            <a href="/home" id="btnHome" class="btn btn-outline-info">
-                &nbsp;Back To Home&nbsp;
+            <a href="/home" id="btnHome" class="btn btn-info"><i class="fas fa-home"></i>
+                Back to Home
             </a>
         </div>
 
-        <div class="col">
+        <div class="col text-right">
             <a class="btn btn-info" href="/employee/add"><i class="fa fa-plus"></i>
                 &nbsp;Add New</a>
         </div>

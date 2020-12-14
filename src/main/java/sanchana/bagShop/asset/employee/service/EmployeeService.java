@@ -1,12 +1,14 @@
 package sanchana.bagShop.asset.employee.service;
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.*;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import sanchana.bagShop.asset.commonAsset.model.Enum.LiveOrDead;
 import sanchana.bagShop.asset.employee.dao.EmployeeDao;
 import sanchana.bagShop.asset.employee.entity.Employee;
 import sanchana.bagShop.util.interfaces.AbstractService;
@@ -16,7 +18,7 @@ import java.util.List;
 @Service
 // spring transactional annotation need to tell spring to this method work through the project
 @CacheConfig( cacheNames = "employee" )
-public class EmployeeService implements AbstractService< Employee, Integer > {
+public class EmployeeService implements AbstractService<Employee, Integer > {
 
     private final EmployeeDao employeeDao;
 
@@ -39,15 +41,23 @@ public class EmployeeService implements AbstractService< Employee, Integer > {
             put = {@CachePut( value = "employee", key = "#employee.id" )} )
     @Transactional
     public Employee persist(Employee employee) {
+        if(employee.getId()==null){
+            employee.setLiveOrDead(LiveOrDead.ACTIVE);}
         return employeeDao.save(employee);
     }
 
-    @CacheEvict( allEntries = true )
+    public boolean delete(Integer id) {
+        Employee employee =  employeeDao.getOne(id);
+        employee.setLiveOrDead(LiveOrDead.STOP);
+        employeeDao.save(employee);
+        return false;
+    }
+   /* @CacheEvict( allEntries = true )
     public boolean delete(Integer id) {
         employeeDao.deleteById(id);
         return false;
     }
-
+*/
     @Cacheable
     public List< Employee > search(Employee employee) {
         ExampleMatcher matcher = ExampleMatcher

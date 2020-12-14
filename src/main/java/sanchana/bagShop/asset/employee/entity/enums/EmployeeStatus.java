@@ -1,4 +1,4 @@
-package sanchana.bagShop.asset.employee.entity.Enum;
+package sanchana.bagShop.asset.employee.entity.enums;
 
 public enum EmployeeStatus {
     WORKING("Working"),

@@ -3,7 +3,148 @@
 <head>
 </head>
 
-<body>
+<body class="animsition">
+<div class="page-wrapper">
+
+<!--<nav class="navbar navbar-expand-sm navbar-dark " style="background-color: rgba(85,14,204,0.49);height:60px;" th:fragment="navBarFragment">-->
+
+    <div class="header-desktop3 d-none d-lg-block" th:fragment="navBarFragment">
+        <div class="section__content section__content--p35">
+            <div class="header3-wrap">
+                <div class="header__logo">
+                    <a href="#">
+                        <img data-th-src="${'/img/logo.PNG'}" id="navLogo" class="image" alt="Sanchana" />
+                    </a>
+                </div>
+                <div class="header__navbar">
+                </div>
+                <div class="header__tool">
+                    <div class="header-button-item has-noti js-item-menu">
+                        <i class="zmdi zmdi-notifications"></i>
+                        <div class="notifi-dropdown notifi-dropdown--no-bor js-dropdown">
+                            <div class="notifi__title">
+                                <p>You have 3 Notifications</p>
+                            </div>
+                            <div class="notifi__item">
+                                <div class="bg-c1 img-cir img-40">
+                                    <i class="zmdi zmdi-email-open"></i>
+                                </div>
+                                <div class="content">
+                                    <p>You got a email notification</p>
+                                    <span class="date">April 12, 2018 06:50</span>
+                                </div>
+                            </div>
+                            <div class="notifi__item">
+                                <div class="bg-c2 img-cir img-40">
+                                    <i class="zmdi zmdi-account-box"></i>
+                                </div>
+                                <div class="content">
+                                    <p>Your account has been blocked</p>
+                                    <span class="date">April 12, 2018 06:50</span>
+                                </div>
+                            </div>
+                            <div class="notifi__item">
+                                <div class="bg-c3 img-cir img-40">
+                                    <i class="zmdi zmdi-file-text"></i>
+                                </div>
+                                <div class="content">
+                                    <p>You got a new file</p>
+                                    <span class="date">April 12, 2018 06:50</span>
+                                </div>
+                            </div>
+                            <div class="notifi__footer">
+                                <a href="#">All notifications</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-button-item js-item-menu">
+                        <i class="zmdi zmdi-settings"></i>
+                        <div class="setting-dropdown js-dropdown">
+                            <div class="account-dropdown__body">
+                                <div class="account-dropdown__item">
+                                    <a href="#">
+                                        <i class="zmdi zmdi-account"></i>Account</a>
+                                </div>
+                                <div class="account-dropdown__item">
+                                    <a href="#">
+                                        <i class="zmdi zmdi-settings"></i>Setting</a>
+                                </div>
+                                <div class="account-dropdown__item">
+                                    <a href="#">
+                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                </div>
+                            </div>
+                            <div class="account-dropdown__body">
+                                <div class="account-dropdown__item">
+                                    <a href="#">
+                                        <i class="zmdi zmdi-globe"></i>Language</a>
+                                </div>
+                                <div class="account-dropdown__item">
+                                    <a href="#">
+                                        <i class="zmdi zmdi-pin"></i>Location</a>
+                                </div>
+                                <div class="account-dropdown__item">
+                                    <a href="#">
+                                        <i class="zmdi zmdi-email"></i>Email</a>
+                                </div>
+                                <div class="account-dropdown__item">
+                                    <a href="#">
+                                        <i class="zmdi zmdi-notifications"></i>Notifications</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="account-wrap">
+                        <div class="account-item account-item--style2 clearfix js-item-menu">
+                            <div class="image">
+                                <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                            </div>
+                            <div class="content">
+                                <a class="js-acc-btn" href="#">john doe</a>
+                            </div>
+                            <div class="account-dropdown js-dropdown">
+                                <div class="info clearfix">
+                                    <div class="image">
+                                        <a href="#">
+                                            <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <h5 class="name">
+                                            <a href="#">john doe</a>
+                                        </h5>
+                                        <span class="email">johndoe@example.com</span>
+                                    </div>
+                                </div>
+                                <div class="account-dropdown__body">
+                                    <div class="account-dropdown__item">
+                                        <a href="#">
+                                            <i class="zmdi zmdi-account"></i>Account</a>
+                                    </div>
+                                    <div class="account-dropdown__item">
+                                        <a href="#">
+                                            <i class="zmdi zmdi-settings"></i>Setting</a>
+                                    </div>
+                                    <div class="account-dropdown__item">
+                                        <a href="#">
+                                            <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                    </div>
+                                </div>
+                                <div class="account-dropdown__footer">
+                                    <a href="#">
+                                        <i class="zmdi zmdi-power"></i>Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
 
 <!--<header th:fragment="navBarFragment">
 
@@ -89,99 +230,99 @@
     </div>
 </header>-->
 
-<nav class="navbar navbar-expand-sm navbar-dark " style="background-color: rgba(85,14,204,0.49);height:60px;" th:fragment="navBarFragment">
-    <a class="navbar-brand" href="#">
+<!--<nav class="navbar navbar-expand-sm navbar-dark " style="background-color: rgba(85,14,204,0.49);height:60px;" th:fragment="navBarFragment">-->
+<!--    <a class="navbar-brand" href="#">-->
 
-        <img src="../img/logo.png" style="width:50px;height:50px;" id="logo" class="animated-spin">
+<!--        <img src="../img/logo.png" style="width:50px;height:50px;" id="logo" class="animated-spin">-->
 
-    </a>
-    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-            aria-controls="collapsibleNavId"
-            aria-expanded="false" aria-label="Toggle navigation"></button>
+<!--    </a>-->
+<!--    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"-->
+<!--            aria-controls="collapsibleNavId"-->
+<!--            aria-expanded="false" aria-label="Toggle navigation"></button>-->
 
-        <form class="form-inline my-1 my-lg-0" style="margin-left:850px;">
-            <input class="form-control mr-sm-2 mt-4" type="text" placeholder="Search" style="height:30px">
-            <button class="btn btn-lg my-lg-1 my-sm-0 " type="submit" style="padding:10px"><i class="fa fa-search" style="font-size: medium;color: white"></i> </button>
-        </form>
-    </div>
-
-
-</nav>
-
-<nav class="navbar navbar-expand-sm navbar-dark " style="background-color:rgba(27,5,75,0.91);" th:fragment="navBarFragment">
-    <a class="navbar-brand" href="#"><i class="fa fa-home" style="font-size: 18px"></i></a>
+<!--        <form class="form-inline my-1 my-lg-0" style="margin-left:850px;">-->
+<!--            <input class="form-control mr-sm-2 mt-4" type="text" placeholder="Search" style="height:30px">-->
+<!--            <button class="btn btn-lg my-lg-1 my-sm-0 " type="submit" style="padding:10px"><i class="fa fa-search" style="font-size: medium;color: white"></i> </button>-->
+<!--        </form>-->
+<!--    </div>-->
 
 
-    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-            aria-controls="collapsibleNavId"
-            aria-expanded="false" aria-label="Toggle navigation"></button>
-    <div class="collapse navbar-collapse" id="collapsibleNavId">
-
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-<<<<<<< HEAD
-            <li class="nav-itemBatch active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-itemBatch">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-itemBatch dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
-                   aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a class="dropdown-itemBatch" href="#">Action 1</a>
-=======
+<!--</nav>-->
+<!-existing nav bar-->
+<!--<nav class="navbar navbar-expand-sm navbar-dark " style="background-color:rgba(27,5,75,0.91);" th:fragment="navBarFragment">-->
+<!--    <a class="navbar-brand" href="#"><i class="fa fa-home" style="font-size: 18px"></i></a>-->
 
 
-            <li class="nav-itemBatch dropdown active">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
-                   aria-expanded="false"> <i class="fa fa-user"></i> General</a>
-                <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a data-th-href="@{'/employee'}" class="nav-link"> Employee</a>
-                    <a class="dropdown-itemBatch" href="#">Action 2</a>
-                </div>
-            </li>
+<!--    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"-->
+<!--            aria-controls="collapsibleNavId"-->
+<!--            aria-expanded="false" aria-label="Toggle navigation"></button>-->
+<!--    <div class="collapse navbar-collapse" id="collapsibleNavId">-->
 
-            <li class="nav-itemBatch dropdown active">
-                <a class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" aria-haspopup="true"
-                   aria-expanded="false"> <i class="fa fa-bell"></i> Transaction</a>
-                <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a data-th-href="@{'/employee'}" class="nav-link"> Employee</a>
-                    <a class="dropdown-itemBatch" href="#">Action 2</a>
-                </div>
-            </li>
-
-            <li class="nav-itemBatch dropdown active">
-                <a class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" aria-haspopup="true"
-                   aria-expanded="false"> <i class="fa fa-book-open"></i> Report</a>
-                <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a data-th-href="@{'/employee'}" class="nav-link"> Employee</a>
->>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
-                    <a class="dropdown-itemBatch" href="#">Action 2</a>
-                </div>
-            </li>
-
-        </ul>
-<<<<<<< HEAD
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-itemBatch active">
-            </li>
-            <li class="nav-itemBatch active">
-            <a data-th-href="@{'/employee'}" class="nav-link"> Employee</a>
-=======
-
-    <!--    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-itemBatch active">
-            </li>
-            <li class="nav-itemBatch active">
-                <a data-th-href="@{'/employee'}" class="nav-link"> Employee</a>
->>>>>>> 56d8cb4e848d36271016629645d45166b942a42b
-        </ul>
--->
-    </div>
+<!--        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">-->
+<!--<<<<<<< HEAD-->
+<!--            <li class="nav-itemBatch active">-->
+<!--                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>-->
+<!--            </li>-->
+<!--            <li class="nav-itemBatch">-->
+<!--                <a class="nav-link" href="#">Link</a>-->
+<!--            </li>-->
+<!--            <li class="nav-itemBatch dropdown">-->
+<!--                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"-->
+<!--                   aria-expanded="false">Dropdown</a>-->
+<!--                <div class="dropdown-menu" aria-labelledby="dropdownId">-->
+<!--                    <a class="dropdown-itemBatch" href="#">Action 1</a>-->
+<!--=======-->
 
 
-</nav>
+<!--            <li class="nav-itemBatch dropdown active">-->
+<!--                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"-->
+<!--                   aria-expanded="false"> <i class="fa fa-user"></i> General</a>-->
+<!--                <div class="dropdown-menu" aria-labelledby="dropdownId">-->
+<!--                    <a data-th-href="@{'/employee'}" class="nav-link"> Employee</a>-->
+<!--                    <a class="dropdown-itemBatch" href="#">Action 2</a>-->
+<!--                </div>-->
+<!--            </li>-->
+
+<!--            <li class="nav-itemBatch dropdown active">-->
+<!--                <a class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" aria-haspopup="true"-->
+<!--                   aria-expanded="false"> <i class="fa fa-bell"></i> Transaction</a>-->
+<!--                <div class="dropdown-menu" aria-labelledby="dropdownId">-->
+<!--                    <a data-th-href="@{'/employee'}" class="nav-link"> Employee</a>-->
+<!--                    <a class="dropdown-itemBatch" href="#">Action 2</a>-->
+<!--                </div>-->
+<!--            </li>-->
+
+<!--            <li class="nav-itemBatch dropdown active">-->
+<!--                <a class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" aria-haspopup="true"-->
+<!--                   aria-expanded="false"> <i class="fa fa-book-open"></i> Report</a>-->
+<!--                <div class="dropdown-menu" aria-labelledby="dropdownId">-->
+<!--                    <a data-th-href="@{'/employee'}" class="nav-link"> Employee</a>-->
+<!--&gt;>>>>>> 56d8cb4e848d36271016629645d45166b942a42b-->
+<!--                    <a class="dropdown-itemBatch" href="#">Action 2</a>-->
+<!--                </div>-->
+<!--            </li>-->
+
+<!--        </ul>-->
+<!--<<<<<<< HEAD-->
+<!--        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">-->
+<!--            <li class="nav-itemBatch active">-->
+<!--            </li>-->
+<!--            <li class="nav-itemBatch active">-->
+<!--            <a data-th-href="@{'/employee'}" class="nav-link"> Employee</a>-->
+<!--=======-->
+
+<!--    &lt;!&ndash;    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">-->
+<!--            <li class="nav-itemBatch active">-->
+<!--            </li>-->
+<!--            <li class="nav-itemBatch active">-->
+<!--                <a data-th-href="@{'/employee'}" class="nav-link"> Employee</a>-->
+<!--&gt;>>>>>> 56d8cb4e848d36271016629645d45166b942a42b-->
+<!--        </ul>-->
+<!--&ndash;&gt;-->
+<!--    </div>-->
+
+
+</div>
 
 
 </body>
