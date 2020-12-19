@@ -7,12 +7,8 @@
     --error-color: #fa370d;
 }
 
-h4 strong{
-    padding: 20px;
-    font-family: Georgia;
-    font-size: 30px;
-    color: #2c3e50;
-}
+
+/*----------------------Tablle Css end------------------------------------------------------*/
 
 /*body{*/
 /*    color: #9e9e9e;*/
@@ -100,16 +96,16 @@ h4 strong{
 
 /* for summary form - end*/
 /* for billing test show - start*/
-#tableTestBill {
-    font-size: 16px;
-}
+/*#tableTestBill {*/
+/*    font-size: 16px;*/
+/*}*/
 
-#tableTestBill tr td p {
-    color: var(--error-color);
-    text-align: center;
-    font-weight: bold;
-    font-style: italic;
-}
+/*#tableTestBill tr td p {*/
+/*    color: var(--error-color);*/
+/*    text-align: center;*/
+/*    font-weight: bold;*/
+/*    font-style: italic;*/
+/*}*/
 
 /* for sbilling test show - end*/
 /*main window  - start*/

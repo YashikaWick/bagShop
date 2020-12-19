@@ -14,13 +14,13 @@
 <div class="container-fluid  form-Border">
     <div class="row mt-4">
         <div class="col">
-            <a href="/home" id="btnHome" class="btn btn-info"><i class="fas fa-home"></i>
+            <a href="/home" id="btnHome" class="btn btn-dark"><i class="fas fa-arrow-left"></i>
                 Back to Home
             </a>
         </div>
 
         <div class="col text-right">
-            <a class="btn btn-info" href="/employee/add"><i class="fa fa-plus"></i>
+            <a class="btn btn-dark" href="/employee/add"><i class="fa fa-plus"></i>
                 &nbsp;Add New</a>
         </div>
 
@@ -35,12 +35,12 @@
         </div>
     </div>
 </div>
-<div class="container-fluid formBorder text-center">
+<div class="container-fluid">
     <div class="col">
         <div class="col" id="employeeListPresent" th:if="${not #lists.isEmpty(employees)}">
-            <table class="table table-hover table-striped" id="myTable">
+            <table class="table table-hover" id="myTable">
                 <thead>
-                <tr>
+                <tr >
                     <th> Index</th>
                     <th> Image</th>
                     <th> Employee Id</th>
@@ -68,10 +68,9 @@
                     <th th:text="${employee.designation.designation}"></th>
                     <th th:text="${employee.employeeStatus.employeeStatus}"></th>
                     <th>
-                        <a id="employeeView" th:href="${'/employee/' + employee.id}" class="btn btn-outline-secondary btn-sm">&nbsp;View</a>
-                        <a id="employeeEdit" th:href="${'/employee/edit/' + employee.id}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i>&nbsp;Edit</a>
-                        <a id="employeeRemove" th:href="${'/employee/remove/' + employee.id}"
-                           th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i>
+                        <a id="employeeView" th:href="${'/employee/' + employee.id}" class="btn btn-success btn-sm">&nbsp;View</a>
+                        <a id="employeeEdit" th:href="${'/employee/edit/' + employee.id}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i>&nbsp;Edit</a>
+                        <a id="employeeRemove" th:href="${'/employee/remove/' + employee.id}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i>
                             Delete</a>
                     </th>
                 </tr>
