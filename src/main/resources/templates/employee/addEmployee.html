@@ -38,7 +38,7 @@
     <form id="form" class="form-horizontal" data-th-action="${addStatus==true?'/employee/save':'/employee/update'}"
           data-th-object="${employee}" method="POST" enctype="multipart/form-data" >
 
-      <div class="form-row" >
+      <div class="form-row form-Border">
         <!--Left Side-->
         <div class="form-group col-md-1 col-sm-1"></div>
         <div class="form-group col-md-10 col-sm-6 flex-column" >
@@ -69,7 +69,7 @@
           <div class="row">
             <!--Title -->
             <div class="form-group col-md-4" >
-              <label class="control-label" for="title">Title :</label >
+              <label class="control-label" for="title"><span class="required">Title :</span></label >
               <select id="title" data-th-field="*{title}" class="form-control" tabindex="3" required >
                 <option value="" >Choose Title</option >
                 <option data-th-each="titles : ${title}"
@@ -80,7 +80,7 @@
             </div >
             <!--Civil status-->
             <div class="form-group col-md-4" >
-                <label class="control-label" for="civilStatus" >Civil State :</label >
+              <label class="control-label" for="civilStatus" ><span class="required">Civil Status :</span></label >
                 <select data-th-field="*{civilStatus}" id="civilStatus" class="form-control" tabindex="11"
                         required >
                   <option value="" >Choose Civil Status</option >
@@ -111,7 +111,7 @@
           <!--Name-->
           <div class="row">
             <div class="form-group col-md-6" >
-              <label class="control-label" for="name" >Full Name :</label >
+              <label class="control-label" for="name" ><span class="required">Full Name :<span</label >
 
               <input id="name" data-th-field="*{name}" class="form-control" tabindex="4" type="text" required />
               <span id="nameError" data-th-errors="*{name}"
@@ -132,7 +132,7 @@
           <div class="row">
             <div class="form-group col-md-4" >
               <!--Nic-->
-                <label class="control-label" for="nic" >NIC No :</label >
+              <label class="control-label" for="nic" ><span class="required">NIC No :</span></label >
 
 
                 <input data-th-field="*{nic}" class="form-control" tabindex="6" type="text"
@@ -143,7 +143,7 @@
 
             </div >
             <!--Gender-->
-            <div class="form-group col-md-4" >
+            <div class="form-group col-md-3" >
 
                 <legend><label class="control-label" for="gender" >Gender :</label ></legend>
                 <div class="custom-control custom-checkbox custom-control-inline "
@@ -152,7 +152,7 @@
                          data-th-name="${'gender'}"
                          data-th-value="${genders}"
                          data-th-id="${index.index}+${genders}" type="radio"
-                         data-th-checked="${genders==gender}"/>
+                         data-th-checked="${genders==gender}" th:disabled="disabled"/>
                   <label class="custom-control-label"
                          data-th-for="${index.index}+${genders}"
                          data-th-text="${genders.gender}"> radio
@@ -161,25 +161,27 @@
 
             </div >
             <!--Date of birth-->
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-5">
 
                 <label class="control-label" for="dateOfBirth" >Birth date :</label >
 
               <div class="col-md-8" >
                 <input id="dateOfBirth" data-th-field="*{dateOfBirth}" class="form-control" tabindex="8"
                        placeholder="Ex: 1990 - 01 - 20"
-                       required type="date" />
+                       required type="date" th:disabled="disabled"/>
                 <span id="dateOfBirthError" data-th-errors="*{dateOfBirth}"
                       data-th-if="${#fields.hasErrors('dateOfBirth')}" class="error" >Error Birthday</span >
               </div >
 
           </div>
 
+            <div class="row"></div>
+
             <div class="row">
               <div class="form-group col-md-5  col-sm-5 text-left flex-column">
                 <!--Address-->
                 <div class="form-group text-left">
-                  <label class="control-label" for="address" >Address :</label >
+                  <label class="control-label" for="address" ><span class="required">Address :</span></label >
 
                   <textarea id="address" data-th-field="*{address}" class="form-control" tabindex="12"
                             required ></textarea >
@@ -250,7 +252,7 @@
               <div class="form-group col-md-5 col-sm-5  flex-column">
                 <strong><b><u>Contact Details</u></b></strong>
                 <div class="form-row text-right" >
-                  <label class="control-label" for="mobileOne" >Mobile One No :</label >
+                  <label class="control-label" for="mobileOne" ><span class="required">Mobile One No :</span></label >
                   <input id="mobileOne" data-th-field="*{mobileOne}" class="form-control mobile" tabindex="13"
                          type="text"
                          maxlength="10" min="9"

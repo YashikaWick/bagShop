@@ -304,15 +304,15 @@ $("#invoiceNumber").bind("keyup", function () {
 
 //colour change function --start
 let backgroundColourChangeGood = function (id) {
-    $(id).css('background-color', '#00FFFF');
+    $(id).css('border-color', '#50C878', 'border-radius', '10px');
 };
 
 let backgroundColourChangeBad = function (id) {
-    $(id).css('background-color', '#FF00AA');
+    $(id).css('border-color', '#8B0000');
 };
 
 let backgroundColourChangeNothingToChange = function (id) {
-    $(id).css('background-color', '#ffffff');
+    $(id).css('background-color', 'transparent');
 };
 
 //colour change function -- end
