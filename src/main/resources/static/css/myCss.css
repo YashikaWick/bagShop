@@ -59,6 +59,28 @@
     padding-bottom: 5px;
 }
 
+#categoryForm{
+    padding: 50px;
+    width: 90%;
+}
+
+/*alert property*/
+#alertBox{
+    /*display: none;*/
+    /*background-image: linear-gradient(to right, #66a80f, #c0eb75);*/
+
+   /*top: 50%;*/
+    /*background-size:cover;*/
+    /*color: white;*/
+    /*position: absolute;*/
+    /*width: 350px;*/
+    /*border-radius: 5px;*/
+    /*left: 50%;*/
+    /*margin-left: -160px;*/
+    /*padding: 16px 8px 8px;*/
+    box-sizing: border-box;
+}
+
 /*.btn {*/
 
 /*    height:200px;*/

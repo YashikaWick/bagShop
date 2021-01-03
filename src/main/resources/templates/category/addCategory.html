@@ -8,32 +8,38 @@
 <nav th:replace="~{fragments/navBar :: navBarFragment}"></nav>
 
 <!--Heading Area-->
-<div class="container-fluid bg-dark form-Border">
-    <div class="row text-center formManagement border-info">
-        <!--View list Button-->
+<div class="container-fluid">
+    <div class="row text-center">
+
+        <!--Home Button-->
         <div class="col">
-            <a href="/category" class="btn btn-primary">
-                <i class="fa fa-list" style="font-size: 20px"></i>&nbsp;&nbsp;View List
+            <a class="btn btn-dark" href="/home">
+                <i class="fa fa-arrow-left" style="font-size: 20px"></i> Back to Home
             </a>
         </div>
+
         <!--Form Name-->
         <div class="col">
             <h2 class="text-light text-center">
                 <strong>
-                    <span th:text="${addStatus==true?'Add New Category':'Update Category Details'}"></span>
+                    <span th:text="${addStatus==true?'Add New Category':'Update Category Details'}" style="font-size: 25px; color: #1d2124"></span>
                 </strong>
             </h2>
         </div>
-        <!--Home Button-->
-        <div class="col">
-            <a class="btn btn-primary" href="/home">
-                <i class="fa fa-home" style="font-size: 20px"></i> &nbsp;&nbsp;Home
+
+        <!--View list Button-->
+        <div class="col text-right">
+            <a href="/category" class="btn btn-dark">
+                <i class="fa fa-list" style="font-size: 20px"></i>&nbsp;&nbsp;View List
             </a>
         </div>
+
     </div>
 </div>
+<br>
+<br>
 <!--Form Content-->
-<div class="container-fluid bg-info formBorder">
+<div class="container-fluid form-Border" id="categoryForm">
     <div class="col-sm-12 flex-column ">
         <form id="form" class="form-horizontal" th:action="${addStatus==true?'/category/add':'/category/update'}"
               th:object="${category}" method="POST" enctype="multipart/form-data">

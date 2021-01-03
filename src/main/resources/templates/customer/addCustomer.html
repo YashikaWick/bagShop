@@ -7,11 +7,11 @@
 <body>
 <nav th:replace="~{fragments/navBar :: navBarFragment}"></nav>
 <!--Heading Area-->
-<div class="container-fluid bg-dark form-Border">
+<div class="container-fluid">
     <div class="row text-center formManagement border-info">
         <!--ViewList Button-->
         <div class="col">
-            <a href="/customer" class="btn btn-primary" tabindex="1">
+            <a href="/customer" class="btn btn-dark" tabindex="1">
                 <i class="fa fa-list" style="font-size: 20px"></i>&nbsp;&nbsp;View List
             </a>
         </div>
@@ -19,14 +19,14 @@
         <div class="col">
             <h2 class="text-light text-center">
                 <strong>
-                    <span th:text="${addStatus==true?'Add New Customer':'Update Customer Details'}"></span>
+                   <span th:text="${addStatus==true?'Add New Customer':'Update Customer Details'}" style="color: #1d2124; font-size: 25px" ></span>
                 </strong>
             </h2>
         </div>
         <!--Home Button-->
         <div class="col">
-            <a class="btn btn-primary" href="/home" tabindex="2">
-                <i class="fa fa-home" style="font-size: 20px"></i> &nbsp;&nbsp;Home
+            <a class="btn btn-dark" href="/home" tabindex="2">
+                <i class="fa fa-arrow-left" style="font-size: 20px"></i> &nbsp;&nbsp;Back to Home
             </a>
         </div>
     </div>
@@ -58,7 +58,7 @@
                     <!--Tittle -->
                     <div class="form-row text-right">
                         <div class="col-md-4">
-                            <label class="control-label" for="title">Title :</label>
+                            <label class="control-label" for="title"><span class="required">Title :</span></label>
                         </div>
                         <div class="col-md-8">
                             <select id="title" th:field="*{title}" class="form-control" tabindex="3" required>
@@ -73,7 +73,7 @@
                     <!--Name-->
                     <div class="form-row text-right">
                         <div class="col-md-4">
-                            <label class="control-label" for="name">Name :</label>
+                            <label class="control-label" for="name"><span class="required">Name :</span></label>
                         </div>
                         <div class="col-md-8">
                             <input id="name" th:field="*{name}" class="form-control" tabindex="4" type="text" required/>
@@ -84,7 +84,7 @@
                     <!--Nic-->
                     <div class="form-row text-right">
                         <div class="col-md-4">
-                            <label class="control-label" for="nic">NIC No :</label>
+                            <label class="control-label" for="nic"><span class="required">NIC No :</span></label>
                         </div>
                         <div class="col-md-8">
                             <input id="nic" th:field="*{nic}" class="form-control" tabindex="5" type="text" minlength="10" maxlength="12"/>
