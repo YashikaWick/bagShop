@@ -102,12 +102,12 @@
               <label class="control-label" for="brand">Brand :</label>
             </div>
             <div class="col-md-4">
-              <select id="brand" class="form-control" tabindex="5" th:field="*{brand}"
+              <select id="brand" class="form-control" tabindex="5"  data-th-field="*{brand}"
                       style="font-size:large" required>
                 <option value="" disabled>Please select</option>
-                <option th:each="brand : ${brands}"
-                        th:text="${brand.name}"
-                        th:value="${brand.id}">
+                <option  data-th-each="brand : ${brands}"
+                         data-th-text="${brand.name}"
+                         data-th-value="${brand.id}">
                 </option>
               </select>
             </div>
@@ -118,12 +118,12 @@
               <label class="control-label" for="color">Item Color :</label>
             </div>
             <div class="col-md-4">
-              <select id="color" class="form-control" tabindex="5" th:field="*{itemColor}"
+              <select id="color" class="form-control" tabindex="5"  data-th-field="*{itemColor}"
                       style="font-size:large" required>
                 <option value="" disabled>Please select</option>
-                <option th:each="itemColor : ${itemColors}"
-                        th:text="${itemColor.name}"
-                        th:value="${itemColor.id}">
+                <option  data-th-each="itemColor : ${itemColors}"
+                         data-th-text="${itemColor.name}"
+                         data-th-value="${itemColor.id}">
                 </option>
               </select>
             </div>
@@ -134,12 +134,12 @@
               <label class="control-label" for="itemSize">Item Size :</label>
             </div>
             <div class="col-md-4">
-              <select id="itemSize" class="form-control" tabindex="5" th:field="*{itemSize}"
+              <select id="itemSize" class="form-control" tabindex="5"  data-th-field="*{itemSize}"
                       style="font-size:large" required>
                 <option value="" disabled>Please select</option>
-                <option th:each="itemSize : ${itemSizes}"
-                        th:text="${itemSize.itemSize}"
-                        th:value="${itemSize}">
+                <option  data-th-each="itemSize : ${itemSizes}"
+                         data-th-text="${itemSize.itemSize}"
+                         data-th-value="${itemSize}">
                 </option>
               </select>
             </div>
@@ -248,9 +248,9 @@
 
 
 <!--footer include-->
-<footer data-th-replace="~{fragments/footer :: footerFragment}"></footer>
+<div data-th-replace="~{fragments/footer :: footerFragment}"></div>
 <!--script include-->
-<script data-th-replace="~{fragments/script :: scriptFragment}"></script>
+<div data-th-replace="~{fragments/script :: scriptFragment}"></div>
 <script>
     $(document).ready(function () {
             let mainCategoryValueBind = $("#mainCategoryValueBind").val();
