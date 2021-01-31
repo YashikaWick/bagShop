@@ -1,7 +1,9 @@
 package lk.sanchana_bag_shop.asset.item.controller;
 
 
+import lk.sanchana_bag_shop.asset.brand.service.BrandService;
 import lk.sanchana_bag_shop.asset.category.controller.CategoryRestController;
+import lk.sanchana_bag_shop.asset.color.service.ItemColorService;
 import lk.sanchana_bag_shop.asset.common_asset.model.enums.LiveDead;
 import lk.sanchana_bag_shop.asset.item.entity.Item;
 import lk.sanchana_bag_shop.asset.item.entity.enums.ItemStatus;
@@ -27,16 +29,23 @@ import java.util.stream.Collectors;
 public class ItemController implements AbstractController< Item, Integer > {
   private final ItemService itemService;
   private final MakeAutoGenerateNumberService makeAutoGenerateNumberService;
+  private final ItemColorService itemColorService;
+  private final BrandService brandService;
 
   @Autowired
-  public ItemController(ItemService itemService, MakeAutoGenerateNumberService makeAutoGenerateNumberService) {
+  public ItemController(ItemService itemService, MakeAutoGenerateNumberService makeAutoGenerateNumberService,
+                        ItemColorService itemColorService, BrandService brandService) {
     this.itemService = itemService;
     this.makeAutoGenerateNumberService = makeAutoGenerateNumberService;
+    this.itemColorService = itemColorService;
+    this.brandService = brandService;
   }
 
   private String commonThings(Model model, Item item, Boolean addState) {
     model.addAttribute("statuses", ItemStatus.values());
     model.addAttribute("item", item);
+    model.addAttribute("itemColors", itemColorService.findAll());
+    model.addAttribute("brands", brandService.findAll());
     model.addAttribute("addStatus", addState);
     model.addAttribute("mainCategories", MainCategory.values());
     model.addAttribute("urlMainCategory", MvcUriComponentsBuilder
