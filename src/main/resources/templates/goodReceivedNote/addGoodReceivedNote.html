@@ -31,34 +31,34 @@
                 <tbody>
                 <tr data-th-each="purchaseOrderItem, index : ${purchaseOrderDetail.purchaseOrderItems}">
                     <td>
-                        <input type="text" class="form-control text-center" data-th-value="${index.count}" readonly required>
+                        <input type="text" class="form-control text-center" data-th-value="${index.count}" readonly>
                     </td>
                     <td>
                         <input type="text" class="form-control" data-th-value="${purchaseOrderItem.item.name}"
-                               readonly required>
+                               readonly>
                         <!--item id-->
                         <input type="text" class="form-control" data-th-name="${'ledgers[__${index.index}__].item.id'}"
                                data-th-value="${purchaseOrderItem.item.id}"
-                               hidden required>
+                               hidden>
                     </td>
                     <td>
                         <input type="text" class="form-control text-center"
                                data-th-value="${purchaseOrderItem.quantity}"
                                data-th-name="${'ledgers[__${index.index}__].quantity'}"
-                               readonly required>
+                               readonly>
                         <!--sell price-->
                         <input type="text" class="form-control"
                                data-th-name="${'ledgers[__${index.index}__].sellPrice'}"
                                data-th-value="${purchaseOrderItem.item.sellPrice}"
-                               hidden required>
+                               hidden>
                     </td>
                     <td>
                         <input type="date" class="form-control " onchange="dateMatch(this)"
-                               data-th-name="${'ledgers[__${index.index}__].manufactureDate'}" data-th-id="${'md'+index.count}" required>
+                               data-th-name="${'ledgers[__${index.index}__].manufactureDate'}" data-th-id="${'md'+index.count}">
                     </td>
                     <td>
                         <input type="date" class="form-control " onchange="dateMatch(this)"
-                               data-th-name="${'ledgers[__${index.index}__].expiredDate'}" data-th-id="${'ed'+index.count}" required>
+                               data-th-name="${'ledgers[__${index.index}__].expiredDate'}" data-th-id="${'ed'+index.count}">
                     </td>
                 </tr>
                 </tbody>
@@ -92,9 +92,9 @@
 </div>
 
 <!--/* footer is */-->
-<div data-th-replace="~{fragments/footer :: footerFragment}"></div>
+<footer data-th-replace="~{fragments/footer :: footerFragment}"></footer>
 <!--/* script is included */-->
-<div data-th-replace="~{fragments/script :: scriptFragment}"></div>
+<script data-th-replace="~{fragments/script :: scriptFragment}"></script>
 
 <script>
     function dateMatch(obj) {
