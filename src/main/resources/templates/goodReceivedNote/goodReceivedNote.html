@@ -1,29 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head  data-th-replace="~{fragments/header :: headerFragment}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head data-th-replace="~{fragments/header :: headerFragment}">
     <meta charset="UTF-8">
-    <title>J N Super </title>
+    <title>Kmart Super</title>
 </head>
 <body>
 <nav data-th-replace="~{fragments/navBar :: navBarFragment}"></nav>
-<div class="container-fluid ">
-    <div class="row text-center formManagement border-info">
-        <div class="col">
-
-
-        </div>
-        <div class="col ">
-            <h4 class="text-info text-center">
-                <strong>
-                    Good Receiving Note Management
-                </strong>
-            </h4>
-        </div>
-        <div class="col">
-        </div>
-    </div>
-</div>
 <!--Table view-->
 <div class="col">
     <div class="col" id="purchaseRequestListPresent" data-th-if="${not #lists.isEmpty(notCompleteAll)}">
@@ -48,7 +30,7 @@
                 <th data-th-text="${purchaseOrder.price}"></th>
                 <th data-th-text="${{purchaseOrder.createdAt}}"></th>
                 <th>
-                    <a  data-th-href="${'/purchaseOrder/view/' + purchaseOrder.id}"
+                    <a  data-th-href="${'/purchaseOrder/view' + purchaseOrder.id}"
                         class="btn btn-primary btn-sm"><i class="fa fa-folder-open" style="font-size: 15px"></i>&nbsp;View</a>
                     <a  data-th-href="${'/goodReceivedNote/' + purchaseOrder.id}" class="btn btn-success btn-sm"><i
                             class="fa fa-edit" style="font-size: 15px"></i>&nbsp; Confirm </a>
@@ -69,20 +51,19 @@
                 <span aria-hidden="true">&times;</span>
             </button>
             <h3 class="text-center text-danger">
-                <strong>There is no pending purchaseOrder upto now please make a purchaseOrder.</strong>
+                <strong>There is no purchaseOrder upto now please add purchaseOrder to the system using "New" button.</strong>
             </h3>
         </div>
     </div>
-
+    <script>
+        /*active boostrap alert - start*/
+        $(".alert").alert();
+        /*active boostrap alert - end*/
+    </script>
 </div>
 
 
-<div data-th-replace="~{fragments/footer :: footerFragment}"></div>
-<div data-th-replace="~{fragments/script :: scriptFragment}"></div>
-<script>
-    /*active boostrap alert - start*/
-    $(".alert").alert();
-    /*active boostrap alert - end*/
-</script>
+<footer data-th-replace="~{fragments/footer :: footerFragment}"></footer>
+<script data-th-replace="~{fragments/script :: scriptFragment}"></script>
 </body>
 </html>
