@@ -1,4 +1,4 @@
-package lk.sanchana_bag_shop.asset.item.entity.Enum;
+package lk.sanchana_bag_shop.asset.item.entity.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
