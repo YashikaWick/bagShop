@@ -3,8 +3,11 @@ package lk.sanchana_bag_shop.asset.item.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFilter;
+import lk.sanchana_bag_shop.asset.brand.entity.Brand;
 import lk.sanchana_bag_shop.asset.category.entity.Category;
+import lk.sanchana_bag_shop.asset.color.entity.ItemColor;
 import lk.sanchana_bag_shop.asset.common_asset.model.enums.LiveDead;
+import lk.sanchana_bag_shop.asset.item.entity.enums.ItemSize;
 import lk.sanchana_bag_shop.asset.item.entity.enums.ItemStatus;
 import lk.sanchana_bag_shop.asset.ledger.entity.Ledger;
 import lk.sanchana_bag_shop.asset.purchase_order_item.entity.PurchaseOrderItem;
@@ -29,10 +32,9 @@ import java.util.List;
 @JsonFilter("Item")
 public class Item extends AuditEntity {
 
-    @Size( min = 5, message = "Your name cannot be accepted" )
+    @Size(min = 5, message = "Your name cannot be accepted")
     private String name;
 
-    @NotEmpty
     private String rop;
 
     @Column( unique = true )
@@ -44,14 +46,23 @@ public class Item extends AuditEntity {
     @Enumerated( EnumType.STRING )
     private ItemStatus itemStatus;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated( EnumType.STRING)
+    private ItemSize itemSize;
+
+    @Enumerated( EnumType.STRING)
     private LiveDead liveDead;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Category category;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Brand brand;
+
+    @ManyToOne
+    private ItemColor itemColor;
+
     @OneToMany( mappedBy = "item" )
-    private List< SupplierItem > supplierItem;
+    private List< SupplierItem > supplierItems;
 
     @OneToMany( mappedBy = "item" )
     @JsonBackReference
