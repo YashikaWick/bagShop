@@ -93,7 +93,54 @@
                     <span id="nameError" data-th-errors="*{name}"
                           data-th-if="${#fields.hasErrors('name')}" class="error" >Error Name</span >
                   </div >
-                </div >
+                </div > <!--Brand -->
+                <div class="form-row text-right">
+                  <div class="col-md-4">
+                    <label class="control-label" for="brand">Brand :</label>
+                  </div>
+                  <div class="col-md-4">
+                    <select id="brand" class="form-control" tabindex="5" data-th-field="*{brand}"
+                            style="font-size:large" required>
+                      <option value="" disabled>Please select</option>
+                      <option data-th-each="brand : ${brands}"
+                              data-th-text="${brand.name}"
+                              data-th-value="${brand.id}">
+                      </option>
+                    </select>
+                  </div>
+                </div>
+                <!--Item Color-->
+                <div class="form-row text-right">
+                  <div class="col-md-4">
+                    <label class="control-label" for="color">Item Color :</label>
+                  </div>
+                  <div class="col-md-4">
+                    <select id="color" class="form-control" tabindex="5" data-th-field="*{itemColor}"
+                            style="font-size:large" required>
+                      <option value="" disabled>Please select</option>
+                      <option data-th-each="itemColor : ${itemColors}"
+                              data-th-text="${itemColor.name}"
+                              data-th-value="${itemColor.id}">
+                      </option>
+                    </select>
+                  </div>
+                </div>
+                <!--size-->
+                <div class="form-row text-right">
+                  <div class="col-md-4">
+                    <label class="control-label" for="itemSize">Item Size :</label>
+                  </div>
+                  <div class="col-md-4">
+                    <select id="itemSize" class="form-control" tabindex="5" data-th-field="*{itemSize}"
+                            style="font-size:large" required>
+                      <option value="" disabled>Please select</option>
+                      <option data-th-each="itemSize : ${itemSizes}"
+                              data-th-text="${itemSize.itemSize}"
+                              data-th-value="${itemSize}">
+                      </option>
+                    </select>
+                  </div>
+                </div>
                 <!--ReOrder Point-->
                 <div class="form-row text-right" >
                   <div class="col-md-4" >
