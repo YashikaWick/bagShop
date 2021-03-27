@@ -1,70 +1,51 @@
-    <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments/header :: headerFragment}">
+<!DOCTYPE html>
+<html lang="en" >
+<head  >
     <meta charset="UTF-8">
     <title>Thymeleaf Springboot </title>
+    <link  data-th-href="@{/css/myCss.css}" media="all" rel="stylesheet" type="text/css"/>
+
 </head>
-<body id="loginBack">
-<!--Login-->
-<link th:href="@{/css/login.css}" media="all" rel="stylesheet" type="text/css"/>
-<!-- Button trigger modal -->
-<div class="container">
-    <img data-th-src="${'img/CiXTiiB.jpg'}" class="image" alt="Sanchana" />
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Sign Up Here
-    </button>
-</div>
+<body id="loginPage">
+<div class="col full-height loginback" >
+    <h1>Login Here</h1>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="column" id="main">
-
-                    <form method="post" th:action="${'/login'}" id="login-form" class="login-form" autocomplete="off" role="main">
-                        <h1 class="a11y-hidden">Login Form</h1>
-                        <div>
-                            <label class="label-username">
-                                <input type="username" class="text" id="username" th:name="${'username'}" placeholder="Username" tabindex="1" required />
-                                <span class="required">Username</span>
-                            </label>
-                        </div>
-                        <div>
-                            <label class="label-password">
-                                <input type="password" class="text" id="inputPassword" th:name="${'password'}" placeholder="Password" tabindex="2" required />
-                                <span class="required">Password</span>
-                            </label>
-                        </div>
-                        <input type="submit" value="Log In" />
-                        <div class="username">
-                            <a href="#">Forgot password?</a>
-                        </div>
-                        <figure aria-hidden="true">
-                            <div class="person-body"></div>
-                            <div class="neck skin"></div>
-                            <div class="head skin">
-                                <div class="eyes"></div>
-                                <div class="mouth"></div>
-                            </div>
-                            <div class="hair"></div>
-                            <div class="ears"></div>
-                            <div class="shirt-1"></div>
-                            <div class="shirt-2"></div>
-                        </figure>
-                    </form>
+    <div class="col-sm-8">
+        <form  data-th-action="${'/login'}" method="post">
+            <br/>
+            <fieldset>
+                <div class="form-label-group">
+                    <input type="text" id="username" data-th-name="${'username'}" class="form-control" placeholder="username"
+                           required>
+                    <label for="username">Username</label>
                 </div>
-                <div>
+                <div class="form-label-group">
+                    <input type="password" id="inputPassword" data-th-name="${'password'}" class="form-control"
+                           placeholder="password"
+                           required>
+                    <label for="inputPassword">Password</label>
                 </div>
-
+                <div class="form-group text-right">
+                    <button class="btn btn-primary " type="submit" id="btnLogin">LOGIN</button>
+                </div>
+            </fieldset>
+            <div class="container-fluid "  data-th-if="${param.error}">
+                <p class="bg-white text-capitalize text-danger text-lg-center">Invalid username or password. </p>
             </div>
-        </div>
+            <div class="container-fluid ">
+                <p id="errorMessage"  data-th-text="${err}" class="bg-white text-capitalize text-danger text-lg-center"></p>
+            </div>
+        </form>
     </div>
+
 </div>
-<!--footer include-->
-<footer th:replace="~{fragments/footer :: footerFragment}"></footer>
+
+<div   data-th-replace="~{fragments/footer :: footerFragment}"></div>
 <!--script include-->
-<script th:replace="~{fragments/script :: scriptFragment}"></script>
+<script  data-th-replace="~{fragments/script :: scriptFragment}"></script>
 
 </body>
 </html>
+
+
+

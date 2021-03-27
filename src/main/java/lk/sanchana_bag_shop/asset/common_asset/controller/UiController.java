@@ -1,5 +1,6 @@
 package lk.sanchana_bag_shop.asset.common_asset.controller;
 
+
 import lk.sanchana_bag_shop.asset.user_management.user.service.UserService;
 import lk.sanchana_bag_shop.util.service.DateTimeAgeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class UiController {
         return "index";
     }
 
-    @GetMapping(value = {"/home", "/mainwindow"})
+    @GetMapping(value = {"/home", "/mainWindow"})
     public String getHome(Model model) {
         //do some logic here if you want something to be done whenever
         /*User authUser = userService.findByUserName(SecurityContextHolder.getContext().getAuthentication().getName());
