@@ -15,7 +15,7 @@ import java.util.List;
 
 @Service
 @CacheConfig(cacheNames = "brand")
-public class BrandService implements AbstractService< Brand, Integer> {
+public class BrandService implements AbstractService<Brand, Integer> {
     private final BrandDao brandDao;
 
     @Autowired

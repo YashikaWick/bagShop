@@ -1,7 +1,6 @@
 package lk.sanchana_bag_shop.asset.brand.controller;
 
 
-
 import lk.sanchana_bag_shop.asset.brand.entity.Brand;
 import lk.sanchana_bag_shop.asset.brand.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
