@@ -6,11 +6,7 @@
 </head >
 <body class="sb-nav-fixed" >
 <nav data-th-replace="~{fragments/navBar :: navBarFragment}" ></nav >
-<div id="layoutSidenav" >
-  <div data-th-replace="~{fragments/sideNav :: sideNavFragment}" >
-  </div >
-  <div id="layoutSidenav_content" >
-    <main >
+
       <!--Form Content-->
       <div class="container-fluid  " >
         <div class="col-sm-12 flex-column " >
@@ -18,7 +14,7 @@
                 data-th-object="${item}" method="POST" enctype="multipart/form-data" >
             <div class="row" >
               <div class="container-fluid " >
-                <div class="row text-center formManagement border-info" >
+                <div class="row text-center   " >
                   <!--View list Button-->
                   <div class="col" >
                     <a href="/item" class="btn btn-success" tabindex="1" >
@@ -82,6 +78,56 @@
                     </select >
                   </div >
                 </div >
+                <!--Brand -->
+                <div class="form-row text-right" >
+                  <div class="col-md-4" >
+                    <label class="control-label" for="brand" >Brand :</label >
+                  </div >
+                  <div class="col-md-4" >
+                    <select id="brand" data-th-field="*{brand}" class="form-control" tabindex="4" style="font-size: large"
+                            required >
+                      <option value="" disabled >Please select</option >
+                      <option data-th-each="brand : ${brands}"
+                              data-th-text="${brand.name}"
+                              data-th-value="${brand.id}"
+                      >
+                      </option >
+                    </select >
+                  </div >
+                </div >
+                <!--Item Color -->
+                <div class="form-row text-right" >
+                  <div class="col-md-4" >
+                    <label class="control-label" for="itemColor" >Brand :</label >
+                  </div >
+                  <div class="col-md-4" >
+                    <select id="itemColor" data-th-field="*{itemColor}" class="form-control" tabindex="4" style="font-size: large"
+                            required >
+                      <option value="" disabled >Please select</option >
+                      <option data-th-each="itemColor : ${itemColors}"
+                              data-th-text="${itemColor.name}"
+                              data-th-value="${itemColor.id}"
+                      >
+                      </option >
+                    </select >
+                  </div >
+                </div ><!--Warranty Period-->
+                <div class="form-row text-right">
+                  <div class="col-md-4">
+                    <label class="control-label" for="warrantyPeriod">Warranty Period :</label>
+                  </div>
+                  <div class="col-md-4">
+                    <select id="warrantyPeriod" class="form-control" tabindex="4"
+                            required>
+                      <option value="" disabled>Please select</option>
+                      <option  data-th-each="warrantyPeriod : ${warrantyPeriod}"
+                               data-th-text="${warrantyPeriod.warrantyPeriod}"
+                               data-th-value="${warrantyPeriod}"
+                      >
+                      </option>
+                    </select>
+                  </div>
+                </div>
                 <!--Name-->
                 <div class="form-row text-right" >
                   <div class="col-md-4" >
@@ -93,54 +139,7 @@
                     <span id="nameError" data-th-errors="*{name}"
                           data-th-if="${#fields.hasErrors('name')}" class="error" >Error Name</span >
                   </div >
-                </div > <!--Brand -->
-                <div class="form-row text-right">
-                  <div class="col-md-4">
-                    <label class="control-label" for="brand">Brand :</label>
-                  </div>
-                  <div class="col-md-4">
-                    <select id="brand" class="form-control" tabindex="5" data-th-field="*{brand}"
-                            style="font-size:large" required>
-                      <option value="" disabled>Please select</option>
-                      <option data-th-each="brand : ${brands}"
-                              data-th-text="${brand.name}"
-                              data-th-value="${brand.id}">
-                      </option>
-                    </select>
-                  </div>
-                </div>
-                <!--Item Color-->
-                <div class="form-row text-right">
-                  <div class="col-md-4">
-                    <label class="control-label" for="color">Item Color :</label>
-                  </div>
-                  <div class="col-md-4">
-                    <select id="color" class="form-control" tabindex="5" data-th-field="*{itemColor}"
-                            style="font-size:large" required>
-                      <option value="" disabled>Please select</option>
-                      <option data-th-each="itemColor : ${itemColors}"
-                              data-th-text="${itemColor.name}"
-                              data-th-value="${itemColor.id}">
-                      </option>
-                    </select>
-                  </div>
-                </div>
-                <!--size-->
-                <div class="form-row text-right">
-                  <div class="col-md-4">
-                    <label class="control-label" for="itemSize">Item Size :</label>
-                  </div>
-                  <div class="col-md-4">
-                    <select id="itemSize" class="form-control" tabindex="5" data-th-field="*{itemSize}"
-                            style="font-size:large" required>
-                      <option value="" disabled>Please select</option>
-                      <option data-th-each="itemSize : ${itemSizes}"
-                              data-th-text="${itemSize.itemSize}"
-                              data-th-value="${itemSize}">
-                      </option>
-                    </select>
-                  </div>
-                </div>
+                </div >
                 <!--ReOrder Point-->
                 <div class="form-row text-right" >
                   <div class="col-md-4" >
@@ -220,9 +219,6 @@
           </form >
         </div >
       </div >
-    </main >
-  </div >
-</div >
 
 <div data-th-replace="~{fragments/footer :: footerFragment}" ></div >
 <!--script include-->

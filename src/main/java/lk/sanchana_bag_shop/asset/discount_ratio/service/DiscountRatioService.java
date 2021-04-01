@@ -4,6 +4,7 @@ package lk.sanchana_bag_shop.asset.discount_ratio.service;
 import lk.sanchana_bag_shop.asset.common_asset.model.enums.LiveDead;
 import lk.sanchana_bag_shop.asset.discount_ratio.dao.DiscountRatioDao;
 import lk.sanchana_bag_shop.asset.discount_ratio.entity.DiscountRatio;
+import lk.sanchana_bag_shop.asset.discount_ratio.entity.enums.DiscountRatioStatus;
 import lk.sanchana_bag_shop.util.interfaces.AbstractService;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +32,7 @@ private final DiscountRatioDao discountRatioDao;
     public DiscountRatio persist(DiscountRatio discountRatio) {
         if ( discountRatio.getId() == null ){
             discountRatio.setLiveDead(LiveDead.ACTIVE);
+            discountRatio.setDiscountRatioStatus(DiscountRatioStatus.ACTIVE);
         }
         return discountRatioDao.save(discountRatio);
     }
