@@ -6,12 +6,11 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum Designation {
-  ADMIN("Admin"),
-  MANAGER("Manager"),
-  PROCUREMENT_MANAGER("Procurement Manager"),
-  HR_MANAGER("HR Manager"),
-  ACCOUNT_MANAGER("Account Manager"),
-  CASHIER("Cashier");
+  ADMIN("ADMIN"),
+  CASHIER("CASHIER"),
+  SK("STOCK KEEPER"),
+  MANAGER("MANAGER"),
+  ACC("ACCOUNTANT");
 
   private final String designation;
 }

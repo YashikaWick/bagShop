@@ -464,3 +464,16 @@ $(".reveal").on('click', function () {
     }
 });
 
+
+//validation for deleting in employee table
+function confirmDelete(obj) {
+    swal("Are you sure to delete this?", {
+        dangerMode: true,
+        buttons: true,
+    }).then((x) => {
+        if (x) {
+            self.location = location.protocol + "//" + location.host + obj.getAttribute('id');
+        }
+    });
+}
+
