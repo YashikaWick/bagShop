@@ -1,6 +1,7 @@
 package lk.sanchana_bag_shop.asset.user_management.user.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lk.sanchana_bag_shop.asset.common_asset.model.enums.LiveDead;
 import lk.sanchana_bag_shop.asset.employee.entity.Employee;
 import lk.sanchana_bag_shop.asset.user_management.role.entity.Role;
@@ -43,13 +44,13 @@ public class User extends AuditEntity {
     private LiveDead liveDead;
 
     @OneToMany(mappedBy = "user",fetch = FetchType.EAGER)
-    private List< UserSessionLog > userSessionLogs;
+    private List<UserSessionLog> userSessionLogs;
 
     @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     @Fetch( FetchMode.SUBSELECT)
     @JoinTable(name = "user_role",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private List< Role > roles;
+    private List<Role> roles;
 
 }

@@ -87,3 +87,8 @@ test {
 }
 
 
+/*To boot run*/
+bootRun {
+    sourceResources sourceSets.main
+}
+

@@ -1,5 +1,6 @@
 package lk.sanchana_bag_shop.asset.user_management.role.entity;
 
+
 import lk.sanchana_bag_shop.asset.common_asset.model.enums.LiveDead;
 import lk.sanchana_bag_shop.asset.user_management.user.entity.User;
 import lk.sanchana_bag_shop.util.audit.AuditEntity;
@@ -27,5 +28,5 @@ public class Role extends AuditEntity {
     private LiveDead liveDead;
 
     @ManyToMany(mappedBy = "roles")
-    private List< User > users;
+    private List<User> users;
 }

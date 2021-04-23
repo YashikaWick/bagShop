@@ -1,10 +1,11 @@
 #loginBack {
   font-family: "Karla", sans-serif;
-  background-color: #d0d0ce;
+    background-color: #d0d0ce;
   min-height: 100vh;
   background-image: linear-gradient(to right, rgb(112,128,144), rgb(176,196,222), rgb(176,196,222) , rgb(112,128,144) );
-
+overflow: hidden;
 }
+
 
 /*div{
   border-style: dotted;

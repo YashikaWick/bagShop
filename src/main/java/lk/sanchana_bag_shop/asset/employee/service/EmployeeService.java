@@ -1,6 +1,7 @@
 package lk.sanchana_bag_shop.asset.employee.service;
 
 
+
 import lk.sanchana_bag_shop.asset.common_asset.model.enums.LiveDead;
 import lk.sanchana_bag_shop.asset.employee.dao.EmployeeDao;
 import lk.sanchana_bag_shop.asset.employee.entity.Employee;
@@ -18,7 +19,7 @@ import java.util.stream.Collectors;
 @Service
 // spring transactional annotation need to tell spring to this method work through the project
 @CacheConfig( cacheNames = "employee" )
-public class EmployeeService implements AbstractService< Employee, Integer > {
+public class EmployeeService implements AbstractService<Employee, Integer > {
 
     private final EmployeeDao employeeDao;
 
