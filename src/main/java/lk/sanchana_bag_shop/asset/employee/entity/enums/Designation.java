@@ -14,4 +14,8 @@ public enum Designation {
   CASHIER("Cashier");
 
   private final String designation;
+
+//sir thawa podi ekak mata methana designation change karann beri weid?
+//  hr manager and procurment mager ain krl single manager kenek hari tiyala stock keeper kenek danna beri weida?
+
 }
