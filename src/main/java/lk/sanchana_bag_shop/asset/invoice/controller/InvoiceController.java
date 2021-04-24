@@ -17,15 +17,18 @@ import lk.sanchana_bag_shop.asset.ledger.entity.Ledger;
 import lk.sanchana_bag_shop.asset.ledger.service.LedgerService;
 import lk.sanchana_bag_shop.util.service.DateTimeAgeService;
 import lk.sanchana_bag_shop.util.service.MakeAutoGenerateNumberService;
+import lk.sanchana_bag_shop.util.service.TwilioMessageService;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.time.LocalDate;
 import java.util.stream.Collectors;
@@ -40,11 +43,13 @@ public class InvoiceController {
   private final DateTimeAgeService dateTimeAgeService;
   private final DiscountRatioService discountRatioService;
   private final MakeAutoGenerateNumberService makeAutoGenerateNumberService;
+  private final TwilioMessageService twilioMessageService;
 
   public InvoiceController(InvoiceService invoiceService, ItemService itemService, CustomerService customerService,
                            LedgerService ledgerService, DateTimeAgeService dateTimeAgeService,
                            DiscountRatioService discountRatioService,
-                           MakeAutoGenerateNumberService makeAutoGenerateNumberService) {
+                           MakeAutoGenerateNumberService makeAutoGenerateNumberService,
+                           TwilioMessageService twilioMessageService) {
     this.invoiceService = invoiceService;
     this.itemService = itemService;
     this.customerService = customerService;
@@ -52,6 +57,7 @@ public class InvoiceController {
     this.dateTimeAgeService = dateTimeAgeService;
     this.discountRatioService = discountRatioService;
     this.makeAutoGenerateNumberService = makeAutoGenerateNumberService;
+    this.twilioMessageService = twilioMessageService;
   }
 
   @GetMapping
