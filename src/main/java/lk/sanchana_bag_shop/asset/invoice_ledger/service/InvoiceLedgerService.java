@@ -22,4 +22,8 @@ public class InvoiceLedgerService {
   public InvoiceLedger findById(Integer id) {
     return invoiceLedgerDao.getOne(id);
   }
+
+  public InvoiceLedger persist(InvoiceLedger invoiceLedger) {
+    return invoiceLedgerDao.save(invoiceLedger);
+  }
 }

@@ -73,7 +73,8 @@ public class ExchangeController {
         exchangeInvoiceLedger.setCount(Integer.parseInt(invoiceLedger.getQuantity()));
         exchangeInvoiceLedgerService.persist(exchangeInvoiceLedger);
         int counter = Integer.parseInt(invoiceLedgerDb.getQuantity()) - Integer.parseInt(invoiceLedger.getQuantity());
-
+        invoiceLedgerDb.setQuantity(String.valueOf(counter));
+        invoiceLedgerService.persist(invoiceLedgerDb);
 
       }
     }
