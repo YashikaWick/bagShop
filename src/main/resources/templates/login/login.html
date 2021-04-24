@@ -1,53 +1,57 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/header :: headerFragment}">
     <meta charset="UTF-8">
-    <title>Login Page</title>
+    <title>Thymeleaf Springboot </title>
+
 </head>
 
-<body>
-<div class="container">
-    <div class="d-flex justify-content-center h-100">
-        <div class="card">
-            <div class="card-header">
-                <h3>Sign In</h3>
-
-            </div>
-            <div class="card-body">
-                <form data-th-action="${'/login'}" method="post">
-                    <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-user"></i></span>
-                        </div>
-                        <input type="text" id="username" data-th-name="${'username'}" class="form-control" placeholder="Username" required>
-
-                    </div>
-                    <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-key"></i></span>
-                        </div>
-                        <input type="password" id="inputPassword" data-th-name="${'password'}" class="form-control" placeholder="Password" required>
-                    </div>
-                    </br>
-                    <div class="form-group">
-                        <input type="submit" id="btnLogin" value="Login" class="btn float-right login_btn">
-                    </div>
-                    </br>
-                    </br>
-                    <div class="container-fluid "  data-th-if="${param.error}"> <p class="bg-white text-capitalize text-danger text-lg-center">Invalid username or password. </p> </div>
-                    <div class="container-fluid "><p id="errorMessage"  data-th-text="${err}" class="bg-white text-capitalize text-danger text-lg-center"></p></div>
-                </form>
-            </div>
-            <div class="card-footer">
-                <div class="d-flex justify-content-center links">
-                    Forgot your password?
+<body id="loginBack">
+<main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+    <div class="container">
+        <div class="card login-card">
+            <div class="row no-gutters">
+                <div class="col-md-5">
+                    <img data-th-src="${'/img/loginback.jpg'}" alt="login" class="login-card-img">
                 </div>
-                <div class="d-flex justify-content-center">
-                    <a href="/passwordChange">Reset password?</a>
+                <div class="col-md-7">
+                    <div class="card-body">
+                        <div class="brand-wrapper">
+                            <img data-th-src="${'/img/logo.png'}" alt="logo" class="logo"> Sanchana Bag Shop
+                        </div>
+                        <p class="login-card-description">Sign into your account</p>
+                        <form  data-th-action="${'/login'}" method="post">
+                            <div class="form-group">
+                                <label for="username" class="sr-only">User Name</label>
+                                <input type="text" id="username" data-th-name="${'username'}" class="form-control" placeholder="username" required>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="inputPassword" class="sr-only">Password</label>
+                                <input type="password" id="inputPassword" data-th-name="${'password'}" class="form-control" placeholder="password" required>
+                            </div>
+                            <input name="login" id="login" class="btn btn-block login-btn mb-4" type="submit" value="Login">
+                        </form>
+
+                        <nav class="login-card-footer-nav">
+                            <a href="#!">Terms of use.</a>
+                            <a href="#!">Privacy policy</a>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
-</div>
+</main>
+</body>
+
+<!--login css-->
+<link  data-th-href="@{/css/login.css}" media="all" rel="stylesheet" type="text/css"/>
+
+<!--footer include-->
+<footer th:replace="~{fragments/footer :: footerFragment}"></footer>
+<!--script include-->
+<script th:replace="~{fragments/script :: scriptFragment}"></script>
+
 </body>
 </html>

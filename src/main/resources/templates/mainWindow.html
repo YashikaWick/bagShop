@@ -1,85 +1,127 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head data-th-replace="~{fragments/header :: headerFragment}" >
-<title></title>
-</head >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: headerFragment}">
+    <meta charset="UTF-8">
+    <title>Thymeleaf Springboot </title>
+</head>
 
-<body class="sb-nav-fixed" >
-<nav data-th-replace="~{fragments/navBar :: navBarFragment}" ></nav >
-<div id="layoutSidenav" >
+<nav th:replace="~{fragments/navBar :: navBarFragment}"></nav>
 
-  <div id="layoutSidenav_content" >
-    <main >
-      <div class="container-fluid mainbody" >
-        <div class="row cardrow" >
-          <div class="col-4 " >
-            <div class="card text-white bg-primary" >
-              <div class="card-header" >Customer</div >
-              <div class="card-body" >
-                <img src="../img/customer.png" style="width:200px; " >
-              </div >
-            </div >
+<body class="animsition" id="mainWindow">
+<div class="page-wrapper">
 
-          </div >
+    <!-- PAGE CONTENT-->
+    <div class="page-content--bgf7">
+        <!-- END BREADCRUMB-->
+        <br>
+        <!-- WELCOME-->
+        <section class="welcome p-t-10">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="title-4" style="color: white">Welcome back !
+                        </h1>
+                        <hr class="line-seprate">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END WELCOME-->
+
+        <!-- STATISTIC-->
+        <section class="statistic statistic2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="statistic__item" style="background-color: #0d4b8e">
+                            <span class="desc" style="font-size:23px; color: whitesmoke">Employee</span>
+                            <div class="Emp">
+                                <a href="/employee">
+                                    <img data-th-src="${'/img/profile.png'}" style="width: 50%; height: 20%; float: right">
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="statistic__item" style="background-color: #4272d7d1">
+
+                            <span class="desc" style="font-size:23px; color: whitesmoke">Item</span>
+                            <div class="Item">
+                                <a href="/item">
+                                    <img data-th-src="${'/img/shopping-bag.png'}" style="width: 50%; height: 20%; float: right">
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="statistic__item" style="background-color: #1f2a42">
+                            <span class="desc" style="font-size:23px; color: whitesmoke">Customer</span>
+                            <div class="cust">
+                               <a href="/customer">
+                                   <img data-th-src="${'/img/target.png'}" style="width: 50%; height: 20%; float: right">
+                               </a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="statistic__item" style="background-color: #70899e">
+                            <span class="desc" style="font-size:23px; color: whitesmoke">Supplier</span>
+                            <div class="sup">
+                                <a href="/supplier">
+                                    <img data-th-src="${'/img/supplier.png'}" style="width: 50%; height: 20%; float: right">
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="statistic__item" style="background-color: #2f4471">
+                            <span class="desc" style="font-size:23px; color: whitesmoke">Purchase Order</span>
+                            <div class="pordr">
+                                <a href="/purchaseOrder">
+                                    <img data-th-src="${'/img/checklist.png'}" style="width: 50%; float: right">
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="statistic__item" style="background-color: #051373">
+                            <span class="desc" style="font-size:23px; color: whitesmoke">Invoice</span>
+                            <div class="invoice">
+                                <a href="/invoice">
+                                    <img data-th-src="${'/img/invoice.png'}" style="width: 50%; float: right">
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- END STATISTIC-->
 
 
-          <div class="col-4" >
-            <div class="card text-white bg-secondary" >
-              <div class="card-header" >Employee</div >
-              <div class="card-body" >
-                <img src="../img/employee.png" style="width:220px; " >
-              </div >
-            </div >
-          </div >
+        <!-- END DATA TABLE-->
+        <!-- END COPYRIGHT-->
+    </div>
 
-          <div class="col-4" >
-            <div class="card text-white bg-success" >
-              <div class="card-header" >Supplier</div >
-              <div class="card-body" >
-                <img src="../img/supplier2.png" style="width:130px;margin-left:50px" >
-              </div >
-            </div >
-          </div >
-
-        </div >
-
-        <div class="row cardrow" >
-          <div class="col-4" >
-            <div class="card text-white bg-danger" >
-              <div class="card-header" >Payment</div >
-              <div class="card-body" >
-                <img src="../img/payment.png" style="width:188px; " >
-              </div >
-            </div >
-          </div >
-          <div class="col-4" >
-            <div class="card text-white bg-warning" >
-              <div class="card-header" >Purchase Order</div >
-              <div class="card-body" >
-                <img src="../img/porder.png" style="width:200px; " >
-              </div >
-            </div >
-          </div >
-          <div class="col-4" >
-
-            <div class="card text-white bg-info" >
-              <div class="card-header" >Item</div >
-              <div class="card-body" >
-                <img src="../img/item.png" style="width:190px; " >
-              </div >
-            </div >
-          </div >
+</div>
 
 
-        </div >
 
-      </div >
-    </main >
-    <!--footer include-->
-    <div data-th-replace="~{fragments/footer :: footerFragment}" ></div >
-    <!--script include-->
-    <div data-th-replace="~{fragments/script :: scriptFragment}" ></div >
-  </div >
-</div >
-</body >
-</html >
+
+
+<!--footer include-->
+<footer th:replace="~{fragments/footer :: footerFragment}"></footer>
+<!--script include-->
+<script th:replace="~{fragments/script :: scriptFragment}"></script>
+
+</body>
+</html>
+

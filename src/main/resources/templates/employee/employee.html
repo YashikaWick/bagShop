@@ -12,20 +12,25 @@
       <div class="container-fluid " >
         <div class="row text-center formManagement " >
           <div class="col" >
-            <a href="/home" id="btnHome" class="btn btn-success" >
-              &nbsp;Back To Home&nbsp;
+            <br>
+            <br>
+            <a href="/home" id="btnHome" class="btn btn-dark" >
+              <i class="fa fa-arrow-left"></i>
+              Home&nbsp;
             </a >
           </div >
 
           <div class="col" >
-            <a class="btn btn-success" href="/employee/add" ><i class="fa fa-plus" ></i >
+            <br>
+            <br>
+            <a class="btn btn-dark" href="/employee/add" ><i class="fa fa-plus" ></i >
               &nbsp;Add New</a >
           </div >
 
         </div >
         <div class="row text-center" >
           <div class="col" >
-            <h2 class="text-light text-center" >
+            <h2 class="text-dark text-center" >
               <strong >
                 Employee Management
               </strong >
@@ -33,6 +38,7 @@
           </div >
         </div >
       </div >
+<br>
       <div class="container-fluid formBorder text-center" >
         <div class="col" >
           <div class="col" id="employeeListPresent" data-th-if="${not #lists.isEmpty(employees)}" >
@@ -67,7 +73,7 @@
                 <th data-th-text="${employee.employeeStatus.employeeStatus}" ></th >
                 <th >
                   <a id="employeeView" data-th-href="${'/employee/' + employee.id}"
-                     class="btn btn-outline-secondary btn-sm" >&nbsp;View</a >
+                     class="btn btn-outline-dark btn-sm" ><i class="fa fa-eye"></i>&nbsp;View</a >
                   <a id="employeeEdit" data-th-href="${'/employee/edit/' + employee.id}"
                      class="btn btn-primary btn-sm" ><i class="fa fa-edit" ></i >&nbsp;Edit</a >
                   <a id="employeeRemove" data-th-href="${'/employee/remove/' + employee.id}"

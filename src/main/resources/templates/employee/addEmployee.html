@@ -15,17 +15,19 @@
         <div class="container  form-Border" >
           <div class="row text-center   " >
             <div class="col" >
-              <a class="btn btn-success" href="/home" >
-                Back To Home
+              <a class="btn btn-dark" href="/home" >
+               <i class="fa fa-arrow-left"></i>Home
               </a >
             </div >
 
             <div class="col" >
-              <a href="/employee" class="btn btn-success" >
-                View Employees
+              <a href="/employee" class="btn btn-dark" >
+                <i class="fa fa-eye"> </i> View Employees
               </a >
             </div >
           </div >
+
+          <br>
           <div class="row text-center" >
             <div class="col" >
               <h4 class="text-light text-center" >
@@ -33,6 +35,7 @@
                   <span data-th-text="${addStatus==true?'New Employee':'Update Employee Details'}" ></span >
                 </strong >
               </h4 >
+              <br>
             </div >
           </div >
         </div >
@@ -197,7 +200,7 @@
             </div >
           </div >
           <!--Address-->
-          <div class="form-row text-right" >
+          <div class="form-row text-right">
             <div class="col-md-4" >
               <label class="control-label" for="address" >Address :</label >
             </div >
@@ -384,7 +387,15 @@
                 $('#image').attr('src', e.target.result);
             }
 
-            reader.readAsDataURL(input.files[0]); // convert to base64 string
+          if (input.files[0].size < 10485760) {
+            reader.readAsDataURL(input.files[0]);
+          } else {
+            swal({
+              title: "Select file size was too large select less than 1MB file",
+              icon: "warning",
+            });
+          }
+
         }
     }
 
