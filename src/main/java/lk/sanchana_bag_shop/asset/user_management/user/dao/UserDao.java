@@ -1,5 +1,7 @@
 package lk.sanchana_bag_shop.asset.user_management.user.dao;
 
+
+
 import lk.sanchana_bag_shop.asset.common_asset.model.enums.LiveDead;
 import lk.sanchana_bag_shop.asset.employee.entity.Employee;
 import lk.sanchana_bag_shop.asset.user_management.user.entity.User;

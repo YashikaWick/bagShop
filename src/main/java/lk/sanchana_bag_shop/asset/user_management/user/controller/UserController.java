@@ -1,5 +1,7 @@
 package lk.sanchana_bag_shop.asset.user_management.user.controller;
 
+
+
 import lk.sanchana_bag_shop.asset.common_asset.model.enums.LiveDead;
 import lk.sanchana_bag_shop.asset.employee.entity.Employee;
 import lk.sanchana_bag_shop.asset.employee.entity.enums.Designation;
@@ -59,14 +61,6 @@ public class UserController {
     model.addAttribute("employeeDetailShow", true);
     model.addAttribute("employeeNotFoundShow", false);
     model.addAttribute("roleList", roleService.findAll());
-        /*model.addAttribute("districtUrl", MvcUriComponentsBuilder
-                .fromMethodName(WorkingPlaceRestController.class, "getDistrict", "")
-                .build()
-                .toString());
-        model.addAttribute("stationUrl", MvcUriComponentsBuilder
-                .fromMethodName(WorkingPlaceRestController.class, "getStation", "")
-                .build()
-                .toString());*/
     return "user/addUser";
   }
 
@@ -88,12 +82,13 @@ public class UserController {
   //Send a searched employee to add working place
   @PostMapping( value = "/workingPlace" )
   public String addUserEmployeeDetails(@ModelAttribute( "employee" ) Employee employee, Model model) {
-
+    System.out.println(employee.toString() + "   employee");
     List< Employee > employees = employeeService.search(employee)
         .stream()
         .filter(userService::findByEmployee)
         .collect(Collectors.toList());
 
+    System.out.println("sss  "+ employees.size());
     if ( employees.size() == 1 ) {
       model.addAttribute("user", new User());
       model.addAttribute("employee", employees.get(0));

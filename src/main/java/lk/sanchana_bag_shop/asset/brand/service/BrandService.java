@@ -2,6 +2,7 @@ package lk.sanchana_bag_shop.asset.brand.service;
 
 
 
+
 import lk.sanchana_bag_shop.asset.brand.dao.BrandDao;
 import lk.sanchana_bag_shop.asset.brand.entity.Brand;
 import lk.sanchana_bag_shop.util.interfaces.AbstractService;
@@ -15,7 +16,7 @@ import java.util.List;
 
 @Service
 @CacheConfig(cacheNames = "brand")
-public class BrandService implements AbstractService< Brand, Integer> {
+public class BrandService implements AbstractService<Brand, Integer> {
     private final BrandDao brandDao;
 
     @Autowired

@@ -1,5 +1,7 @@
 package lk.sanchana_bag_shop.asset.user_management.role.service;
 
+
+
 import lk.sanchana_bag_shop.asset.common_asset.model.enums.LiveDead;
 import lk.sanchana_bag_shop.asset.user_management.role.dao.RoleDao;
 import lk.sanchana_bag_shop.asset.user_management.role.entity.Role;
@@ -15,7 +17,7 @@ import java.util.stream.Collectors;
 
 @Service
 @CacheConfig( cacheNames = {"role"} ) // tells Spring where to store cache for this class
-public class RoleService implements AbstractService<Role, Integer > {
+public class RoleService implements AbstractService< Role, Integer > {
     private final RoleDao roleDao;
 
     @Autowired
@@ -23,14 +25,14 @@ public class RoleService implements AbstractService<Role, Integer > {
         this.roleDao = roleDao;
     }
 
-    @Cacheable
+
     public List< Role > findAll() {
         return roleDao.findAll().stream()
             .filter(x -> LiveDead.ACTIVE.equals(x.getLiveDead()))
             .collect(Collectors.toList());
     }
 
-    @Cacheable
+
     public Role findById(Integer id) {
         return roleDao.getOne(id);
     }
@@ -46,7 +48,7 @@ public class RoleService implements AbstractService<Role, Integer > {
         return roleDao.save(role);
     }
 
-    @CacheEvict( allEntries = true )
+
     public boolean delete(Integer id) {
         Role role =roleDao.getOne(id);
         role.setLiveDead(LiveDead.STOP);
@@ -54,7 +56,7 @@ public class RoleService implements AbstractService<Role, Integer > {
         return true;
     }
 
-    @Cacheable
+
     public List< Role > search(Role role) {
         ExampleMatcher matcher = ExampleMatcher
                 .matching()
@@ -64,7 +66,7 @@ public class RoleService implements AbstractService<Role, Integer > {
         return roleDao.findAll(roleExample);
     }
 
-    @Cacheable
+
     public Role findByRoleName(String roleName) {
         return roleDao.findByRoleName(roleName);
     }

@@ -1,5 +1,6 @@
 package lk.sanchana_bag_shop;
 
+
 import lk.sanchana_bag_shop.asset.common_asset.model.enums.CivilStatus;
 import lk.sanchana_bag_shop.asset.common_asset.model.enums.Gender;
 import lk.sanchana_bag_shop.asset.common_asset.model.enums.Title;
