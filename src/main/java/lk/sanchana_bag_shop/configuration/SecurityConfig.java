@@ -73,27 +73,27 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Override
   protected void configure(HttpSecurity http) throws Exception {
-    http.csrf().disable();
-    http.authorizeRequests().antMatchers("/").permitAll();
+//    http.csrf().disable();
+//    http.authorizeRequests().antMatchers("/").permitAll();
     
     // For developing easy to give permission all lin
 // {"ADMIN","PROCUREMENT_MANAGER","CASHIER","MANAGER","HR_MANAGER","ACCOUNT_MANAGER"}
 
- /*   http.authorizeRequests(
+   http.authorizeRequests(
         authorizeRequests ->
             authorizeRequests
-                .antMatchers(ALL_PERMIT_URL).permitAll()
-                .antMatchers("/category/**").hasAnyRole("ADMIN","PROCUREMENT_MANAGER")
+
                 .antMatchers("/category/**").hasAnyRole("CASHIER","MANAGER")
-                .antMatchers("/discountRatio/**").hasAnyRole("PROCUREMENT_MANAGER","MANAGER")
-                .antMatchers("/employee/**").hasAnyRole("MANAGER","HR_MANAGER" ,"ADMIN")
-                .antMatchers("/goodReceivedNote/**").hasAnyRole("MANAGER","PROCUREMENT_MANAGER")
+                .antMatchers("/discountRatio/**").hasAnyRole("MANAGER")
+                .antMatchers("/employee/**").hasAnyRole("MANAGER","ADMIN")
+                .antMatchers("/goodReceivedNote/**").hasAnyRole("MANAGER","STOCK_KEEPER")
                 .antMatchers("/payment/**").hasAnyRole("MANAGER","ACCOUNT_MANAGER")
-                .antMatchers("/purchaseOrder/**").hasAnyRole("MANAGER","PROCUREMENT_MANAGER")
-                .antMatchers("/role/**").hasAnyRole("MANAGER","HR_MANAGER","ADMIN")
-                .antMatchers("/supplier/**").hasAnyRole("MANAGER","PROCUREMENT_MANAGER")
-                .antMatchers("/supplierItem/**").hasAnyRole("MANAGER","PROCUREMENT_MANAGER")
-                .antMatchers("/user/**").hasAnyRole("MANAGER","HR_MANAGER","ADMIN")
+                .antMatchers("/purchaseOrder/**").hasAnyRole("MANAGER")
+                .antMatchers("/role/**").hasAnyRole("MANAGER" , "ADMIN")
+                .antMatchers("/supplier/**").hasAnyRole("MANAGER")
+                .antMatchers("/supplierItem/**").hasAnyRole("MANAGER")
+                .antMatchers("/user/**").hasAnyRole("MANAGER","ADMIN")
+                    .antMatchers("/exchange/**").hasAnyRole("MANAGER","CASHIER")
                 .anyRequest()
                 .authenticated())
         // Login form
@@ -133,6 +133,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .headers()
         .addHeaderWriter(new XFrameOptionsHeaderWriter(XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN));
 
-*/  }
+ }
 }
 
